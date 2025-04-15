@@ -1,0 +1,786 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9320683C-0424-48A6-AA05-D262AB617CA4}|EviHub.UnitTests\\EviHub.UnitTests.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub.unittests\\adminmasterdatacontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9320683C-0424-48A6-AA05-D262AB617CA4}|EviHub.UnitTests\\EviHub.UnitTests.csproj|solutionrelative:evihub.unittests\\adminmasterdatacontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9320683C-0424-48A6-AA05-D262AB617CA4}|EviHub.UnitTests\\EviHub.UnitTests.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub.unittests\\evihub.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9320683C-0424-48A6-AA05-D262AB617CA4}|EviHub.UnitTests\\EviHub.UnitTests.csproj|solutionrelative:evihub.unittests\\evihub.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\interfaces\\iskillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\iskillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\controllers\\adminmasterdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\controllers\\adminmasterdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\skillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\skillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\interfaces\\iskillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\interfaces\\iskillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\interfaces\\idesignationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\interfaces\\idesignationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\interfaces\\iprojectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\iprojectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\dto\u0027s\\skilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\dto\u0027s\\skilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\dto\u0027s\\certificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\dto\u0027s\\certificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\designationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\designationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\interfaces\\idesignationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\idesignationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\designationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\designationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\dto\u0027s\\designationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\dto\u0027s\\designationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\entities\\masterdata\\designation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\entities\\masterdata\\designation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\certificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\certificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\interfaces\\icertificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\icertificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\certificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\certificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\interfaces\\icertificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\interfaces\\icertificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\projectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\projectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\interfaces\\iprojectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\interfaces\\iprojectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\entities\\masterdata\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\entities\\masterdata\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\dto\u0027s\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\dto\u0027s\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\managerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\managerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\managerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\managerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\entities\\masterdata\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\entities\\masterdata\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\data\\configurations\\managersconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\data\\configurations\\managersconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\genderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\genderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\interfaces\\imanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\imanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\interfaces\\imanagerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\interfaces\\imanagerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\dto\u0027s\\managerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\dto\u0027s\\managerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\dto\u0027s\\genderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\dto\u0027s\\genderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\data\\configurations\\employeeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\data\\configurations\\employeeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\models\\entities\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\entities\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\interfaces\\igenderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\interfaces\\igenderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\repositories\\genderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\genderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\services\\interfaces\\igenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\igenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\contracts\\skillsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\contracts\\skillsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub\\evihub\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminMasterDataController.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Controllers\\AdminMasterDataController.cs",
+              "RelativeDocumentMoniker": "EviHub\\Controllers\\AdminMasterDataController.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Controllers\\AdminMasterDataController.cs",
+              "RelativeToolTip": "EviHub\\Controllers\\AdminMasterDataController.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAIwMMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:01:23.795Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EviHub.UnitTests",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
+              "RelativeDocumentMoniker": "EviHub.UnitTests\\EviHub.UnitTests.csproj",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
+              "RelativeToolTip": "EviHub.UnitTests\\EviHub.UnitTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-15T10:17:34.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminMasterDataControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\AdminMasterDataControllerTests.cs",
+              "RelativeDocumentMoniker": "EviHub.UnitTests\\AdminMasterDataControllerTests.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\AdminMasterDataControllerTests.cs",
+              "RelativeToolTip": "EviHub.UnitTests\\AdminMasterDataControllerTests.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:58:37.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ISkillService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\ISkillService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\ISkillService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\ISkillService.cs",
+              "RelativeToolTip": "EviHub\\Services\\Interfaces\\ISkillService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T16:49:13.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SkillService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\SkillService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\SkillService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\SkillService.cs",
+              "RelativeToolTip": "EviHub\\Services\\SkillService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAvwCYAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T16:50:24.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Program.cs",
+              "RelativeDocumentMoniker": "EviHub\\Program.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Program.cs",
+              "RelativeToolTip": "EviHub\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAEwBUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T11:41:06.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IDesignationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IDesignationRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\Interfaces\\IDesignationRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IDesignationRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\Interfaces\\IDesignationRepository.cs",
+              "ViewState": "AgIAAAEAAADAzMzMzAwswAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T09:07:04.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SkillRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\SkillRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\SkillRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\SkillRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\SkillRepository.cs",
+              "ViewState": "AgIAAAwAAACAZmZmZmYIwBIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T16:52:14.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SkillsController.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Controllers\\SkillsController.cs",
+              "RelativeDocumentMoniker": "EviHub\\Controllers\\SkillsController.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Controllers\\SkillsController.cs",
+              "RelativeToolTip": "EviHub\\Controllers\\SkillsController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T16:47:08.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISkillRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\ISkillRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\Interfaces\\ISkillRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\ISkillRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\Interfaces\\ISkillRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T16:51:51.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProjectService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\ProjectService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\ProjectService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\ProjectService.cs",
+              "RelativeToolTip": "EviHub\\Services\\ProjectService.cs",
+              "ViewState": "AgIAAAAAAAAcmpmZmZkTwAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:07:50.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IProjectService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "RelativeToolTip": "EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:04:58.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SkillDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\SkillDTO.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\DTO\u0027s\\SkillDTO.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\SkillDTO.cs",
+              "RelativeToolTip": "EviHub\\Models\\DTO\u0027s\\SkillDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T07:23:13.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IDesignationService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IDesignationService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\IDesignationService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IDesignationService.cs",
+              "RelativeToolTip": "EviHub\\Services\\Interfaces\\IDesignationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T09:23:10.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DesignationService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\DesignationService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\DesignationService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\DesignationService.cs",
+              "RelativeToolTip": "EviHub\\Services\\DesignationService.cs",
+              "ViewState": "AgIAABsAAABAMzMzMzMpwAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T09:26:34.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CertificationDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\CertificationDTO.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\DTO\u0027s\\CertificationDTO.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\CertificationDTO.cs",
+              "RelativeToolTip": "EviHub\\Models\\DTO\u0027s\\CertificationDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T14:18:33.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DesignationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\DesignationRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\DesignationRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\DesignationRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\DesignationRepository.cs",
+              "ViewState": "AgIAABAAAAAgzczMzEwdwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T09:19:29.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DesignationDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\DesignationDTO.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\DTO\u0027s\\DesignationDTO.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\DesignationDTO.cs",
+              "RelativeToolTip": "EviHub\\Models\\DTO\u0027s\\DesignationDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T09:06:24.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Designation.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\MasterData\\Designation.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\Entities\\MasterData\\Designation.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\MasterData\\Designation.cs",
+              "RelativeToolTip": "EviHub\\Models\\Entities\\MasterData\\Designation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T09:05:44.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CertificationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\CertificationRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\CertificationRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\CertificationRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\CertificationRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwCoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T14:24:26.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ICertificationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\ICertificationRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\Interfaces\\ICertificationRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\ICertificationRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\Interfaces\\ICertificationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T14:22:11.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ICertificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\ICertificationService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\ICertificationService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\ICertificationService.cs",
+              "RelativeToolTip": "EviHub\\Services\\Interfaces\\ICertificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T14:27:27.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProjectRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\ProjectRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\ProjectRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\ProjectRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\ProjectRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:00:08.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IProjectRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IProjectRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\Interfaces\\IProjectRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IProjectRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\Interfaces\\IProjectRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T11:59:15.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\MasterData\\Project.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\Entities\\MasterData\\Project.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\MasterData\\Project.cs",
+              "RelativeToolTip": "EviHub\\Models\\Entities\\MasterData\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T11:53:07.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CertificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\CertificationService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\CertificationService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\CertificationService.cs",
+              "RelativeToolTip": "EviHub\\Services\\CertificationService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T14:30:39.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ProjectDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\ProjectDTO.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\DTO\u0027s\\ProjectDTO.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\ProjectDTO.cs",
+              "RelativeToolTip": "EviHub\\Models\\DTO\u0027s\\ProjectDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T11:54:03.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ManagerService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\ManagerService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\ManagerService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\ManagerService.cs",
+              "RelativeToolTip": "EviHub\\Services\\ManagerService.cs",
+              "ViewState": "AgIAABIAAADAMzMzM7MpwB4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T10:18:46.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "GenderService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\GenderService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\GenderService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\GenderService.cs",
+              "RelativeToolTip": "EviHub\\Services\\GenderService.cs",
+              "ViewState": "AgIAABQAAAAQMzMzM5M4wCIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:49:41.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Manager.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\MasterData\\Manager.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\Entities\\MasterData\\Manager.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\MasterData\\Manager.cs",
+              "RelativeToolTip": "EviHub\\Models\\Entities\\MasterData\\Manager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T18:05:30.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ManagersConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Data\\Configurations\\ManagersConfig.cs",
+              "RelativeDocumentMoniker": "EviHub\\Data\\Configurations\\ManagersConfig.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Data\\Configurations\\ManagersConfig.cs",
+              "RelativeToolTip": "EviHub\\Data\\Configurations\\ManagersConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T11:19:01.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ManagerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\ManagerRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\ManagerRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\ManagerRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\ManagerRepository.cs",
+              "ViewState": "AgIAACQAAAAAmpmZmZkZwDcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:59:25.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IManagerService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IManagerService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\IManagerService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IManagerService.cs",
+              "RelativeToolTip": "EviHub\\Services\\Interfaces\\IManagerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T10:17:31.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IManagerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IManagerRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\Interfaces\\IManagerRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IManagerRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\Interfaces\\IManagerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:58:21.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ManagerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\ManagerDTO.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\DTO\u0027s\\ManagerDTO.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\ManagerDTO.cs",
+              "RelativeToolTip": "EviHub\\Models\\DTO\u0027s\\ManagerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:56:03.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "GenderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\GenderDTO.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\DTO\u0027s\\GenderDTO.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\DTO\u0027s\\GenderDTO.cs",
+              "RelativeToolTip": "EviHub\\Models\\DTO\u0027s\\GenderDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:15:57.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "SkillsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Contracts\\SkillsDTO.cs",
+              "RelativeDocumentMoniker": "EviHub\\Contracts\\SkillsDTO.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Contracts\\SkillsDTO.cs",
+              "RelativeToolTip": "EviHub\\Contracts\\SkillsDTO.cs",
+              "ViewState": "AgIAABUAAADg/////186wB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T13:34:02.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IGenderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IGenderRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\Interfaces\\IGenderRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\Interfaces\\IGenderRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\Interfaces\\IGenderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:20:03.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "EmployeeConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Data\\Configurations\\EmployeeConfig.cs",
+              "RelativeDocumentMoniker": "EviHub\\Data\\Configurations\\EmployeeConfig.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Data\\Configurations\\EmployeeConfig.cs",
+              "RelativeToolTip": "EviHub\\Data\\Configurations\\EmployeeConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:13:34.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\Login.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\Entities\\Login.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\Login.cs",
+              "RelativeToolTip": "EviHub\\Models\\Entities\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:21:11.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Models\\Entities\\Employee.cs",
+              "RelativeToolTip": "EviHub\\Models\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAoAAADgzczMzMw7wBQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:36:53.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "GenderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\GenderRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\GenderRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Repositories\\GenderRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\GenderRepository.cs",
+              "ViewState": "AgIAAAIAAACwAQAAAMAtwBsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:28:28.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "IGenderService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IGenderService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\IGenderService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Services\\Interfaces\\IGenderService.cs",
+              "RelativeToolTip": "EviHub\\Services\\Interfaces\\IGenderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:47:02.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EviHub\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EviHub\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T12:31:02.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "EviHub\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "EviHub\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T12:25:57.021Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
