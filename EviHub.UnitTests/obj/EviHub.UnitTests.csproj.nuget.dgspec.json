@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj": {}
+    "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj": {
+    "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
         "projectName": "EviHub.UnitTests",
-        "projectPath": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
-        "packagesPath": "C:\\Users\\Dhanasri.Ruchira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub.UnitTests\\obj\\",
+        "projectPath": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\Mohana.Kurla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mohana.Kurla\\Source\\Repos\\UX-EviHub\\EviHub.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dhanasri.Ruchira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mohana.Kurla\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,15 +27,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/eviCoreDev/_packaging/eviCoreVSTSNugetFeed/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\EviHub.csproj": {
-                "projectPath": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\EviHub.csproj"
+              "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub\\EviHub.csproj": {
+                "projectPath": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub\\EviHub.csproj"
               }
             }
           }
@@ -56,17 +56,33 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Moq": {
+            "AutoFixture": {
               "target": "Package",
-              "version": "[4.20.72, )"
+              "version": "[4.18.1, )"
             },
-            "xunit.assert": {
+            "ILogger.Moq": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.13.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "xunit": {
               "target": "Package",
               "version": "[2.9.3, )"
             },
-            "xunit.extensibility.core": {
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.9.3, )"
+              "version": "[3.0.2, )"
             }
           },
           "imports": [
@@ -89,21 +105,21 @@
         }
       }
     },
-    "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\EviHub.csproj": {
+    "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub\\EviHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\EviHub.csproj",
+        "projectUniqueName": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub\\EviHub.csproj",
         "projectName": "EviHub",
-        "projectPath": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\EviHub.csproj",
-        "packagesPath": "C:\\Users\\Dhanasri.Ruchira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\EviHub\\EviHub\\obj\\",
+        "projectPath": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub\\EviHub.csproj",
+        "packagesPath": "C:\\Users\\Mohana.Kurla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mohana.Kurla\\Source\\Repos\\UX-EviHub\\EviHub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dhanasri.Ruchira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mohana.Kurla\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -112,8 +128,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/eviCoreDev/_packaging/eviCoreVSTSNugetFeed/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
