@@ -4,6 +4,7 @@ using EviHub.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 using Moq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace EviHub.UnitTests
@@ -18,16 +19,16 @@ namespace EviHub.UnitTests
             adminMasterDataController = new AdminMasterDataController(_skillServiceMock.Object);
         }
         [Fact]
-        public void TestGetAllSkills()
+        public async Task TestGetAllSkills()
         {
             //Arrange
             _skillServiceMock.Setup(x => x.GetAllSkillsAsync()).ReturnsAsync([]);
 
             //Act
-            var result = adminMasterDataController.GetAllSkills();
+            var result = await adminMasterDataController.GetAllSkills();
 
             //Assert
-            Assert.IsType(typeof(OkObjectResult), result);
+            Assert.IsType<OkObjectResult>(result);
         }
 
     }
