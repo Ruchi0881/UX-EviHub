@@ -40,14 +40,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "EviHub.UnitTests.csproj",
-              "DocumentMoniker": "C:\\Users\\Mohana.Kurla\\Source\\Repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
+              "DocumentMoniker": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
               "RelativeDocumentMoniker": "EviHub.UnitTests\\EviHub.UnitTests.csproj",
-              "ToolTip": "C:\\Users\\Mohana.Kurla\\Source\\Repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
+              "ToolTip": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub.UnitTests\\EviHub.UnitTests.csproj",
               "RelativeToolTip": "EviHub.UnitTests\\EviHub.UnitTests.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-15T11:03:59.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T11:03:59.868Z"
             },
             {
               "$type": "Document",
@@ -57,7 +56,7 @@
               "RelativeDocumentMoniker": "EviHub.UnitTests\\AdminMasterDataControllerTests.cs",
               "ToolTip": "C:\\Users\\Mohana.Kurla\\source\\repos\\UX-EviHub\\EviHub.UnitTests\\AdminMasterDataControllerTests.cs",
               "RelativeToolTip": "EviHub.UnitTests\\AdminMasterDataControllerTests.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T11:03:03.78Z",
               "EditorCaption": ""
