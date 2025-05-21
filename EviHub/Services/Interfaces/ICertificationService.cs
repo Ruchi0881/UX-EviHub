@@ -5,9 +5,10 @@ namespace EviHub.Services.Interfaces
 {
     public interface ICertificationService
     {
-        Task<IEnumerable<Certification>> GetAllCertificationsAsync();
-        Task<Certification> AddCertificationAsync(CertificationDTO dto);
-        Task<Certification> UpdateCertificationAsync(int id, CertificationDTO dto);
+        Task<IEnumerable<CertificationDTO>> GetAllCertificationsAsync();
+        Task<CertificationDTO> AddCertificationAsync(CertificationDTO dto);
+        Task<CertificationDTO> UpdateCertificationAsync(int id, CertificationDTO dto);
+        Task<CertificationDTO?> GetCertificationByIdAsync(int id);
         Task<bool> DeleteCertificationAsync(int id);
     }
 }

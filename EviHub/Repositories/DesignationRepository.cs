@@ -1,10 +1,11 @@
 ﻿using EviHub.Data;
 using EviHub.EviHub.Core.Entities.MasterData;
+using EviHub.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EviHub.Repositories
 {
-    public class DesignationRepository
+    public class DesignationRepository : IDesignationRepository
     {
         private readonly EviHubDbContext _context;
 
@@ -34,6 +35,12 @@ namespace EviHub.Repositories
             await _context.SaveChangesAsync();
             return existing;
         }
+        public async Task<Designation> GetByIdAsync(int id)
+        {
+            return await _context.Designations
+                .FirstOrDefaultAsync(d => d.DesignationId == id );
+        }
+
 
         public async Task<bool> DeleteAsync(int id)
         {
@@ -45,6 +52,6 @@ namespace EviHub.Repositories
             return true;
         }
     }
-    ///////////////////////////////////
+    
 }
 

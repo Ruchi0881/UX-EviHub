@@ -26,9 +26,9 @@ namespace EviHub.Repositories
             return project;
         }
 
-        public async Task<Project> UpdateAsync(int Projectid, Project project)
+        public async Task<Project> UpdateAsync(int id, Project project)
         {
-            var existingProject = await _context.Projects.FindAsync(Projectid);
+            var existingProject = await _context.Projects.FindAsync( id);
             if (existingProject == null) return null;
 
             existingProject.ProjectName = project.ProjectName;
@@ -37,9 +37,15 @@ namespace EviHub.Repositories
             return existingProject;
         }
 
-        public async Task<bool> DeleteAsync(int Projectid)
+        public async Task<Project> GetByIdAsync(int id)
         {
-            var project = await _context.Projects.FindAsync(Projectid);
+            return await _context.Projects
+                .FirstOrDefaultAsync(p => p.ProjectId == id);
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var project = await _context.Projects.FindAsync(id);
             if (project == null) return false;
 
             _context.Projects.Remove(project);

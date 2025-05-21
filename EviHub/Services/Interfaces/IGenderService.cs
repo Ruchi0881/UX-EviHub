@@ -5,10 +5,12 @@ namespace EviHub.Services.Interfaces
 {
     public interface IGenderService
     {
-        Task<IEnumerable<Gender>> GetAllGendersAsync();
-        Task<Gender> AddGenderAsync(GenderDTO genderDto);
-        Task<Gender> UpdateGenderAsync(int Genderid, GenderDTO genderDto);
-        Task<bool> DeleteGenderAsync(int Genderid);
+        Task<IEnumerable<GenderDTO>> GetAllGendersAsync();
+        Task<GenderDTO> AddGenderAsync(GenderDTO genderDto);
+        Task<GenderDTO> UpdateGenderAsync(int id, GenderDTO genderDto);
+        Task<GenderDTO?> GetGenderByIdAsync(int id);
+        Task<bool> DeleteGenderAsync(int id);
     }
 }
 
+                                                                                                                            

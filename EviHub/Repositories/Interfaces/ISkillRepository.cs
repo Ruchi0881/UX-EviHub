@@ -6,9 +6,10 @@ namespace EviHub.Repositories.Interfaces
     {
         Task<IEnumerable<Skills>> GetAllSkillsAsync();
         Task<Skills> AddSkillAsync(Skills skill);
-        Task<Skills> UpdateSkillAsync(Skills skill);
-        Task<bool> DeleteSkillAsync(int SkillId);
-        Task<Skills?> GetSkillByIdAsync(int Skillid);
+        Task<Skills> UpdateSkillAsync( int id ,Skills skill);
+        Task<Skills?> GetSkillByIdAsync(int id);
+        Task<bool> DeleteSkillAsync(int id);
+   
 
     }
 }

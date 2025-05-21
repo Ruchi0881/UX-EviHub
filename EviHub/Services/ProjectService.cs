@@ -1,47 +1,67 @@
-﻿using EviHub.EviHub.Core.Entities.MasterData;
+﻿using AutoMapper;
+using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Models.DTO_s;
 using EviHub.Repositories.Interfaces;
 using EviHub.Services.Interfaces;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace EviHub.Services
 {
-    public class ProjectService:IProjectService
+    public class ProjectService : IProjectService
     {
         private readonly IProjectRepository _projectRepository;
+        private readonly IMapper _mapper;
 
-        public ProjectService(IProjectRepository projectRepository)
+        public ProjectService(IProjectRepository projectRepository, IMapper mapper)
         {
             _projectRepository = projectRepository;
+            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Project>> GetAllProjectsAsync()
+        public async Task<IEnumerable<ProjectDTO>> GetAllProjectsAsync()
         {
-            return await _projectRepository.GetAllAsync();
+            var proj = await _projectRepository.GetAllAsync();
+            return _mapper.Map<List<ProjectDTO>>(proj);
         }
 
-        public async Task<Project> AddProjectAsync(ProjectDTO projectDto)
+        public async Task<ProjectDTO> AddProjectAsync(ProjectDTO projectDto)
         {
-            var project = new Project
+            var proj = _mapper.Map<Project>(projectDto);
+            var addedproj = await _projectRepository.AddAsync  (proj);
+            return _mapper.Map<ProjectDTO>(addedproj);
+        }
+
+        public async Task<ProjectDTO> UpdateProjectAsync(int id, ProjectDTO projectDto)
+        {
+            var existingproj = await _projectRepository.GetByIdAsync(id);
+            if (existingproj != null) return null;
+
+            existingproj.ProjectName = projectDto.ProjectName;
+            existingproj.ProjectDescription = projectDto.ProjectDescription;
+            existingproj.IsActive = projectDto.IsActive;
+
+            var updated = await _projectRepository.UpdateAsync(id, existingproj);
+            return _mapper.Map<ProjectDTO>(updated);
+        }
+        public async Task<ProjectDTO> GetProjectByIdAsync(int id)
+        {
+            var proj = await _projectRepository.GetByIdAsync(id);
+            return proj == null ? null : _mapper.Map<ProjectDTO>(proj);
+        }
+
+        public async Task<bool> DeleteProjectAsync(int id)
+        {
+            var existing = await _projectRepository.GetByIdAsync(id);
+            if (existing == null)
             {
-                ProjectName = projectDto.ProjectName
-            };
-
-            return await _projectRepository.AddAsync(project);
-        }
-
-        public async Task<Project> UpdateProjectAsync(int projectId, ProjectDTO projectDto)
-        {
-            var project = new Project
+                throw new Exception("Project not found");
+            }
+            else
             {
-                ProjectName = projectDto.ProjectName
-            };
+                await _projectRepository.DeleteAsync(id);
+                return true;
+            }
 
-            return await _projectRepository.UpdateAsync(projectId, project);
-        }
-
-        public async Task<bool> DeleteProjectAsync(int projectId)
-        {
-            return await _projectRepository.DeleteAsync(projectId);
         }
     }
 }

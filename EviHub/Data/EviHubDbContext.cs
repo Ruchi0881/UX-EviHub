@@ -7,7 +7,7 @@ namespace EviHub.Data
 {
     public class EviHubDbContext : DbContext
     {
-        public EviHubDbContext(DbContextOptions options) : base(options)
+        public EviHubDbContext(DbContextOptions<EviHubDbContext> options) : base(options)
         {
 
         }

@@ -6,7 +6,8 @@ namespace EviHub.Repositories.Interfaces
     {
         Task<IEnumerable<Gender>> GetAllAsync();
         Task<Gender> AddAsync(Gender gender);
-        Task<Gender> UpdateAsync(int Genderid, Gender gender);
-        Task<bool> DeleteAsync(int Genderid);
+        Task<Gender> UpdateAsync(int id, Gender gender);
+        Task<Gender> GetByIdAsync(int id);
+        Task<bool> DeleteAsync(int id);
     }
 }

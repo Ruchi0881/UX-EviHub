@@ -18,15 +18,15 @@ namespace EviHub.Data.Configurations
             .IsRequired(false);//Nullable
         
 
-        builder.HasOne<Certification>()
-            .WithMany()
-            .HasForeignKey(cp => cp.CertificationId)
-            .OnDelete(DeleteBehavior.Restrict);
+        //builder.HasOne<Certification>()
+        //    .WithMany()
+        //    .HasForeignKey(cp => cp.CertificationId)
+        //    .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasOne<Employee>()
-            .WithMany()
-            .HasForeignKey(cp => cp.EmpId)
-            .OnDelete(DeleteBehavior.Restrict);
+        //builder.HasOne<Employee>()
+        //    .WithMany()
+        //    .HasForeignKey(cp => cp.EmpId)
+        //    .OnDelete(DeleteBehavior.Restrict);
     }
 }
 

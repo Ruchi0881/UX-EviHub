@@ -8,6 +8,7 @@ namespace EviHub.Repositories
     public class SkillRepository : ISkillRepository
     {
         private readonly Data.EviHubDbContext _context;
+
         public  SkillRepository(EviHubDbContext context)
         {
             _context = context;
@@ -22,11 +23,16 @@ namespace EviHub.Repositories
             await _context.SaveChangesAsync();
             return skill;
         }
-        public async Task<Skills> UpdateSkillAsync(Skills skill)
+        public async Task<Skills> UpdateSkillAsync(int id,Skills skill)
         {
             _context.Skills.Update(skill);
             await _context.SaveChangesAsync();
             return skill;
+        }
+        public async Task<Skills?> GetSkillByIdAsync(int id)
+        {
+            return await _context.Skills
+                .FirstOrDefaultAsync(s =>s.SkillId == id);
         }
 
         public async Task<bool> DeleteSkillAsync(int skillId)
@@ -39,12 +45,7 @@ namespace EviHub.Repositories
             return true;
         }
         
-        public async Task<Skills?> GetSkillByIdAsync(int id)
-        {
-            return await _context.Skills.FindAsync(id);
-        }
-
     }
     
-    }
+}
 

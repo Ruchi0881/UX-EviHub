@@ -1,51 +1,75 @@
-﻿using EviHub.EviHub.Core.Entities.MasterData;
+﻿using System.Runtime.ConstrainedExecution;
+using AutoMapper;
+using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Models.DTO_s;
 using EviHub.Repositories.Interfaces;
+using EviHub.Services.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace EviHub.Services
 {
-    public class CertificationService
+    public class CertificationService : ICertificationService
     {
         private readonly ICertificationRepository _certificationRepository;
+        private readonly IMapper _mapper;
 
-        public CertificationService(ICertificationRepository certificationRepository)
+        public CertificationService(ICertificationRepository certificationRepository,IMapper mapper)
         {
             _certificationRepository = certificationRepository;
+            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Certification>> GetAllCertificationsAsync()
+        public async Task<IEnumerable<CertificationDTO>> GetAllCertificationsAsync()
         {
-            return await _certificationRepository.GetAllAsync();
+            var cert = await _certificationRepository.GetAllAsync();
+            return _mapper.Map<List<CertificationDTO>>(cert);
         }
 
-        public async Task<Certification> AddCertificationAsync(CertificationDTO dto)
+        public async Task<CertificationDTO> AddCertificationAsync(CertificationDTO dto)
         {
-            var cert = new Certification
+            var cert = _mapper.Map<Certification>(dto);
+            var addedcert = await _certificationRepository.AddAsync(cert);
+            return _mapper.Map<CertificationDTO>(addedcert);
+            
+          
+        }
+
+  
+        public async Task<CertificationDTO> UpdateCertificationAsync(int id, CertificationDTO dto)
+        {
+            var existingcert = await _certificationRepository.GetByIdAsync(id);
+            if (existingcert == null) return null;
+
+            existingcert.CertificationName = dto.CertificationName;
+            existingcert.CategoryId = dto.CategoryId;
+            existingcert.IsActive = dto.IsActive;
+
+            var updated = await _certificationRepository.UpdateAsync(id, existingcert);
+            return _mapper.Map<CertificationDTO>(updated);
+        }
+
+        public async Task <CertificationDTO> GetCertificationByIdAsync (int id)
+        {
+            var cert = await _certificationRepository.GetByIdAsync(id);
+            return cert == null ? null :_mapper.Map<CertificationDTO>(cert);    
+
+        }
+
+        public async Task<bool>  DeleteCertificationAsync(int id)
+        {
+            var existing = await _certificationRepository.GetByIdAsync (id);
+            if (existing == null)
             {
-                CertificationName = dto.CertificationName,
-                CategoryId = dto.CategoryId,
-                IsActive = dto.IsActive
-            };
-
-            return await _certificationRepository.AddAsync(cert);
-        }
-
-        public async Task<Certification> UpdateCertificationAsync(int id, CertificationDTO dto)
-        {
-            var cert = new Certification
+                throw new Exception("Certification Not Found");
+            }
+            else
             {
-                CertificationName = dto.CertificationName,
-                CategoryId = dto.CategoryId,
-                IsActive = dto.IsActive
-            };
-
-            return await _certificationRepository.UpdateAsync(id, cert);
+                await _certificationRepository.DeleteAsync(id);
+                return true;
+            }
+            
         }
 
-        public async Task<bool> DeleteCertificationAsync(int id)
-        {
-            return await _certificationRepository.DeleteAsync(id);
-        }
     }
 }
 

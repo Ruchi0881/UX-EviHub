@@ -9,8 +9,8 @@ namespace EviHub.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Employee> builder)
         {
-            builder.HasKey(e => e.Id);
-            builder.Property(e => e.EmpId).IsRequired().HasMaxLength(50);
+            builder.HasKey(e => e.EmpId);
+            //builder.Property(e => e.EmpId).IsRequired().HasMaxLength(50);
             builder.Property(e => e.FirstName).IsRequired().HasMaxLength(100);
             builder.Property(e => e.LastName).IsRequired().HasMaxLength(100);
             builder.Property(e => e.Email).IsRequired().HasMaxLength(200);
@@ -24,10 +24,10 @@ namespace EviHub.Data.Configurations
                 .HasForeignKey(e => e.DesignationId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(e=>e.Manager)
-                .WithMany(m=>m.EmployeesUnderManager)
-                .HasForeignKey(e => e.ManagerId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(e => e.Manager)
+            //    .WithMany(m => m.EmployeesUnderManager)
+            //    .HasForeignKey(e => e.ManagerId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(e=>e.Gender)
                 .WithMany(g=>g.Employees)
@@ -40,7 +40,7 @@ namespace EviHub.Data.Configurations
                 .OnDelete(DeleteBehavior.Restrict);
 
 
-
+            //builder.HasMany(x=>x.EmployeesUnderManager).WithOne(x=>x.Manager)
 
 
         }

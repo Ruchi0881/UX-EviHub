@@ -11,11 +11,11 @@ namespace EviHub.Data.Configurations
         {
             builder.HasKey(m => m.ManagerId);
 
-            builder.HasOne<Employee>()
-                .WithMany()
-                .HasForeignKey(m => m.EmpId)
-                .OnDelete(DeleteBehavior.Restrict);
-                
+            //builder.HasOne<Employee>()
+            //    .WithMany()
+            //    .HasForeignKey(m => m.EmpId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 

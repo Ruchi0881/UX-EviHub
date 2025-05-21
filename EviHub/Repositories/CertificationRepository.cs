@@ -1,10 +1,12 @@
 ﻿using EviHub.Data;
 using EviHub.EviHub.Core.Entities.MasterData;
+using EviHub.Repositories.Interfaces;
+using EviHub.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EviHub.Repositories
 {
-    public class CertificationRepository
+    public class CertificationRepository:ICertificationRepository
     {
         private readonly EviHubDbContext _context;
 
@@ -36,6 +38,12 @@ namespace EviHub.Repositories
 
             await _context.SaveChangesAsync();
             return existing;
+        }
+
+        public async Task<Certification> GetByIdAsync(int id)
+        {
+            return await _context.Certifications
+                .FirstOrDefaultAsync(c=>c.CertificationId == id && c.IsActive);
         }
 
         public async Task<bool> DeleteAsync(int id)

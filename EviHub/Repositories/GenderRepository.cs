@@ -25,18 +25,24 @@ namespace EviHub.Repositories
             return gender;
         }
 
-        public async Task<Gender> UpdateAsync(int Genderid, Gender gender)
+        public async Task<Gender> UpdateAsync(int id, Gender gender)
         {
-            var existing = await _context.Genders.FindAsync(Genderid);
+            var existing = await _context.Genders.FindAsync(id);
             if (existing == null) return null;
             existing.GenderName = gender.GenderName;
             await _context.SaveChangesAsync();
             return existing;
         }
-
-        public async Task<bool> DeleteAsync(int Genderid)
+        public async Task<Gender> GetByIdAsync(int id)
         {
-            var gender = await _context.Genders.FindAsync(Genderid);
+            return await _context.Genders
+                .FirstOrDefaultAsync(g => g.GenderId == id);
+        }
+        
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var gender = await _context.Genders.FindAsync(id);
             if (gender == null) return false;
             _context.Genders.Remove(gender);
             await _context.SaveChangesAsync();

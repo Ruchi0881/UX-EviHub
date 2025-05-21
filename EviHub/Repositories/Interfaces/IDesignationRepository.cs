@@ -7,6 +7,7 @@ namespace EviHub.Repositories.Interfaces
         Task<IEnumerable<Designation>> GetAllAsync();
         Task<Designation> AddAsync(Designation designation);
         Task<Designation> UpdateAsync(int id, Designation designation);
+        Task<Designation> GetByIdAsync(int id);
         Task<bool> DeleteAsync(int id);
     }
 }

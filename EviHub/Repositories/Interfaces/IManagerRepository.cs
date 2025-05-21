@@ -6,8 +6,10 @@ namespace EviHub.Repositories.Interfaces
     {
         Task<IEnumerable<Manager>> GetAllAsync();
         Task<Manager> AddAsync(Manager manager);
-        Task<Manager> UpdateAsync(int ManagerId, Manager manager);
-        Task<bool> DeleteAsync(int ManagerId);
+        Task<Manager> UpdateAsync(int id, Manager manager);
+        Task<Manager> GetByIdAsync(int id);
+        Task<bool> DeleteAsync(int id);
     }
-    }
+}
+    
 

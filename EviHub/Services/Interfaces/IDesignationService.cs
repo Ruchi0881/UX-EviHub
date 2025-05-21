@@ -5,9 +5,10 @@ namespace EviHub.Services.Interfaces
 {
     public interface IDesignationService
     {
-        Task<IEnumerable<Designation>> GetAllDesignationsAsync();
-        Task<Designation> AddDesignationAsync(DesignationDTO dto);
-        Task<Designation> UpdateDesignationAsync(int id, DesignationDTO dto);
+        Task<IEnumerable<DesignationDTO>> GetAllDesignationsAsync();
+        Task<DesignationDTO> AddDesignationAsync(DesignationDTO dto);
+        Task<DesignationDTO> UpdateDesignationAsync(int id, DesignationDTO dto);
+        Task<DesignationDTO> GetDesignationByIdAsync(int DesignationId);
         Task<bool> DeleteDesignationAsync(int id);
     }
 }

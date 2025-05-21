@@ -5,9 +5,10 @@ namespace EviHub.Services.Interfaces
 {
     public interface IManagerService
     {
-        Task<IEnumerable<Manager>> GetAllManagersAsync();
-        Task<Manager> AddManagerAsync(ManagerDTO dto);
-        Task<Manager> UpdateManagerAsync(int managerId, ManagerDTO dto);
-        Task<bool> DeleteManagerAsync(int managerId);
+        Task<IEnumerable<ManagerDTO>> GetAllManagersAsync();
+        Task<ManagerDTO> AddManagerAsync(ManagerDTO dto);
+        Task<ManagerDTO> UpdateManagerAsync(int Id, ManagerDTO dto);
+        Task<ManagerDTO?> GetManagerByIdAsync(int Id);
+        Task<bool> DeleteManagerAsync(int id);
     }
 }

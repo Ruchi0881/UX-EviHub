@@ -11,7 +11,7 @@ namespace EviHub.EviHub.Core.Entities
         public int EmpId { get; set; }//FK
         public int SkillId { get; set; }//FK
         //Navigation Properties
-        public Employee Employee { get; set; }
-        public Skills Skills { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual Skills Skills { get; set; }
     }
 }

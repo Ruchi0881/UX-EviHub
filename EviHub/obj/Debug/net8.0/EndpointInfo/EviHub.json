@@ -1,14 +1,14 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "EviHub",
     "version": "1.0"
   },
   "paths": {
-    "/api/AdminMasterData/genders": {
+    "/api/Admin/genders": {
       "get": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "responses": {
           "200": {
@@ -18,7 +18,7 @@
       },
       "post": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "requestBody": {
           "content": {
@@ -46,26 +46,19 @@
         }
       }
     },
-    "/api/AdminMasterData/genders/{id}": {
+    "/api/Admin/genders/{id}": {
       "put": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "parameters": [
-          {
-            "name": "Genderid",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
           {
             "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -84,6 +77,152 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/GenderDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/managers": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/managers/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerDTO"
               }
             }
           }
@@ -96,23 +235,16 @@
       },
       "delete": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "parameters": [
-          {
-            "name": "Genderid",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
           {
             "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -123,10 +255,10 @@
         }
       }
     },
-    "/api/AdminMasterData/manager": {
+    "/api/Admin/projects": {
       "get": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "responses": {
           "200": {
@@ -136,23 +268,23 @@
       },
       "post": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManagerDTO"
+                "$ref": "#/components/schemas/ProjectDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManagerDTO"
+                "$ref": "#/components/schemas/ProjectDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ManagerDTO"
+                "$ref": "#/components/schemas/ProjectDTO"
               }
             }
           }
@@ -164,10 +296,31 @@
         }
       }
     },
-    "/api/AdminMasterData/manager/{id}": {
+    "/api/Admin/projects/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "parameters": [
           {
@@ -184,17 +337,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManagerDTO"
+                "$ref": "#/components/schemas/ProjectDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManagerDTO"
+                "$ref": "#/components/schemas/ProjectDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ManagerDTO"
+                "$ref": "#/components/schemas/ProjectDTO"
               }
             }
           }
@@ -207,7 +360,7 @@
       },
       "delete": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "parameters": [
           {
@@ -227,10 +380,10 @@
         }
       }
     },
-    "/api/AdminMasterData/project": {
+    "/api/Admin/certifications": {
       "get": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "responses": {
           "200": {
@@ -240,23 +393,23 @@
       },
       "post": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProjectDTO"
+                "$ref": "#/components/schemas/CertificationDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProjectDTO"
+                "$ref": "#/components/schemas/CertificationDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProjectDTO"
+                "$ref": "#/components/schemas/CertificationDTO"
               }
             }
           }
@@ -268,118 +421,31 @@
         }
       }
     },
-    "/api/AdminMasterData/project/{id}": {
-      "put": {
-        "tags": [
-          "AdminMasterData"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProjectDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProjectDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProjectDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/AdminMasterData/projects/{id}": {
-      "delete": {
-        "tags": [
-          "AdminMasterData"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/AdminMasterData/certification": {
+    "/api/Admin/certifications/{id}": {
       "get": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/AdminMasterData/certifications": {
-      "post": {
-        "tags": [
-          "AdminMasterData"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CertificationDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CertificationDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CertificationDTO"
-              }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/AdminMasterData/certifications/{id}": {
+      },
       "put": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "parameters": [
           {
@@ -419,7 +485,7 @@
       },
       "delete": {
         "tags": [
-          "AdminMasterData"
+          "Admin"
         ],
         "parameters": [
           {
@@ -432,6 +498,258 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/designations": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesignationDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesignationDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesignationDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/designations/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesignationDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesignationDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesignationDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/GetAllSkills": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/skills/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkillDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkillDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkillDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/Add new skill": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkillDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkillDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkillDTO"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -460,17 +778,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Skills"
+                "$ref": "#/components/schemas/SkillDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Skills"
+                "$ref": "#/components/schemas/SkillDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Skills"
+                "$ref": "#/components/schemas/SkillDTO"
               }
             }
           }
@@ -502,17 +820,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Skills"
+                "$ref": "#/components/schemas/SkillDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Skills"
+                "$ref": "#/components/schemas/SkillDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Skills"
+                "$ref": "#/components/schemas/SkillDTO"
               }
             }
           }
@@ -587,72 +905,6 @@
   },
   "components": {
     "schemas": {
-      "Certification": {
-        "type": "object",
-        "properties": {
-          "certificationId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "certificationName": {
-            "type": "string",
-            "nullable": true
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "certificationCategory": {
-            "$ref": "#/components/schemas/CertificationCategory"
-          },
-          "employees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Employee"
-            },
-            "nullable": true
-          },
-          "certificationProgresses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CertificationProgress"
-            },
-            "nullable": true
-          },
-          "employeeCertifications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeCertification"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CertificationCategory": {
-        "type": "object",
-        "properties": {
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "categoryName": {
-            "type": "string",
-            "nullable": true
-          },
-          "certifications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Certification"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CertificationDTO": {
         "type": "object",
         "properties": {
@@ -674,40 +926,7 @@
         },
         "additionalProperties": false
       },
-      "CertificationProgress": {
-        "type": "object",
-        "properties": {
-          "certificationProgressId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "certificationId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "startDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "certification": {
-            "$ref": "#/components/schemas/Certification"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Designation": {
+      "DesignationDTO": {
         "type": "object",
         "properties": {
           "designationId": {
@@ -716,242 +935,6 @@
           },
           "designationName": {
             "type": "string",
-            "nullable": true
-          },
-          "employees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Employee"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Employee": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "mobile": {
-            "type": "string",
-            "nullable": true
-          },
-          "dob": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "interests": {
-            "type": "string",
-            "nullable": true
-          },
-          "designationId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "managerId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "projectId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "genderId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "emergencyContact": {
-            "type": "string",
-            "nullable": true
-          },
-          "isAdmin": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "manager": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "designation": {
-            "$ref": "#/components/schemas/Designation"
-          },
-          "project": {
-            "$ref": "#/components/schemas/Project"
-          },
-          "gender": {
-            "$ref": "#/components/schemas/Gender"
-          },
-          "login": {
-            "$ref": "#/components/schemas/Login"
-          },
-          "employeesUnderManager": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Employee"
-            },
-            "nullable": true
-          },
-          "employeeSkills": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeSkill"
-            },
-            "nullable": true
-          },
-          "employeeCertifications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeCertification"
-            },
-            "nullable": true
-          },
-          "employeeProjects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeProject"
-            },
-            "nullable": true
-          },
-          "proposalWorks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProposalWork"
-            },
-            "nullable": true
-          },
-          "certificationProgresses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CertificationProgress"
-            },
-            "nullable": true
-          },
-          "projectProgresses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProjectProgress"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeCertification": {
-        "type": "object",
-        "properties": {
-          "empCertId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "certificationId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "certifications": {
-            "$ref": "#/components/schemas/Certification"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeProject": {
-        "type": "object",
-        "properties": {
-          "empProjectId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "projectId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "assignedDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "project": {
-            "$ref": "#/components/schemas/Project"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeSkill": {
-        "type": "object",
-        "properties": {
-          "employeeSkillId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "skillId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "skills": {
-            "$ref": "#/components/schemas/Skills"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Gender": {
-        "type": "object",
-        "properties": {
-          "genderId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "genderName": {
-            "type": "string",
-            "nullable": true
-          },
-          "employees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Employee"
-            },
             "nullable": true
           }
         },
@@ -967,31 +950,6 @@
           "genderName": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Login": {
-        "type": "object",
-        "properties": {
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userName": {
-            "type": "string",
-            "nullable": true
-          },
-          "passwordHash": {
-            "type": "string",
-            "nullable": true
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
           }
         },
         "additionalProperties": false
@@ -1032,42 +990,6 @@
         },
         "additionalProperties": false
       },
-      "Project": {
-        "type": "object",
-        "properties": {
-          "projectId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "projectName": {
-            "type": "string",
-            "nullable": true
-          },
-          "projectDescription": {
-            "type": "string",
-            "nullable": true
-          },
-          "isActive": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "employees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Employee"
-            },
-            "nullable": true
-          },
-          "projectProgresses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProjectProgress"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ProjectDTO": {
         "type": "object",
         "properties": {
@@ -1090,108 +1012,7 @@
         },
         "additionalProperties": false
       },
-      "ProjectProgress": {
-        "type": "object",
-        "properties": {
-          "empProjectProgressId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "projectId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "startDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "project": {
-            "$ref": "#/components/schemas/Project"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Proposal": {
-        "type": "object",
-        "properties": {
-          "proposalId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "proposalName": {
-            "type": "string",
-            "nullable": true
-          },
-          "proposalDescription": {
-            "type": "string",
-            "nullable": true
-          },
-          "proposalDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "proposedBy": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "isActive": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "proposalWorks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProposalWork"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProposalWork": {
-        "type": "object",
-        "properties": {
-          "proposalWorkId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "proposalId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "empId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "isActive": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "employee": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "proposal": {
-            "$ref": "#/components/schemas/Proposal"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Skills": {
+      "SkillDTO": {
         "type": "object",
         "properties": {
           "skillId": {
@@ -1200,13 +1021,6 @@
           },
           "skillName": {
             "type": "string",
-            "nullable": true
-          },
-          "employeeSkills": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeSkill"
-            },
             "nullable": true
           }
         },

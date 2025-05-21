@@ -12,15 +12,15 @@ namespace EviHub.Data.Configurations
         {
             builder.HasKey(ep => ep.EmpProjectId);
 
-            builder.HasOne<Employee>()
-                .WithMany()
-                .HasForeignKey(ep => ep.EmpId)
-                .OnDelete(DeleteBehavior.Cascade);
+            //builder.HasOne<Employee>()
+            //    .WithMany()
+            //    .HasForeignKey(ep => ep.EmpId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasOne<Project>()
-                .WithMany()
-                .HasForeignKey(ep => ep.ProjectId)
-                .OnDelete(DeleteBehavior.Cascade);
+            //builder.HasOne<Project>()
+            //    .WithMany()
+            //    .HasForeignKey(ep => ep.ProjectId)
+            //    .OnDelete(DeleteBehavior.Cascade);
         }
     }
 

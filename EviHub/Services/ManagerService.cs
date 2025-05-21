@@ -1,4 +1,5 @@
-﻿using EviHub.EviHub.Core.Entities.MasterData;
+﻿using AutoMapper;
+using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Models.DTO_s;
 using EviHub.Repositories.Interfaces;
 using EviHub.Services.Interfaces;
@@ -8,48 +9,66 @@ namespace Evihubportal.data;
 
 public class ManagerService:IManagerService
 {
-    private readonly IManagerRepository _repository;
+    private readonly IManagerRepository _managerrepository;
+    private readonly IMapper _mapper;
 
-    public ManagerService(IManagerRepository repository)
+    public ManagerService(IManagerRepository managerrepository,IMapper mapper)
     {
-        _repository = repository;
+        _managerrepository = managerrepository;
+        _mapper = mapper;
     }
 
-    public async Task<IEnumerable<Manager>> GetAllManagersAsync()
+    public async Task<IEnumerable<ManagerDTO>> GetAllManagersAsync()
     {
-        return await _repository.GetAllAsync();
+        var man = await _managerrepository.GetAllAsync();
+        return _mapper.Map<List<ManagerDTO>>(man);
     }
 
-    public async Task<Manager> AddManagerAsync(ManagerDTO dto)
+    
+
+    public async Task<ManagerDTO> AddManagerAsync(ManagerDTO dto)
     {
-        var manager = new Manager 
+        var man = _mapper.Map<Manager>(dto);
+        var addedman = await _managerrepository.AddAsync(man);
+        return _mapper.Map<ManagerDTO>(addedman);
+     
+    }
+
+    public async Task<ManagerDTO> UpdateManagerAsync(int id, ManagerDTO dto)
+    {
+        var existingman =await _managerrepository.GetByIdAsync(id);
+        if (existingman == null) return null;
+
+        existingman.EmpId = dto.EmpId;
+        existingman.FirstName = dto.FirstName;
+        existingman.LastName = dto.LastName;
+        existingman.Mobile = dto.Mobile;
+        existingman.Email = dto.Email;
+        var updated = await _managerrepository.UpdateAsync(id,existingman);
+        return _mapper.Map<ManagerDTO>(existingman);
+    }
+    public async Task<ManagerDTO> GetManagerByIdAsync(int id)
+    {
+        var man = await _managerrepository.GetByIdAsync(id);
+        return _mapper.Map<ManagerDTO>(man);
+    }
+
+    public async Task<bool> DeleteManagerAsync(int id)
+    {
+        var existing = await _managerrepository.GetByIdAsync(id);
+        if (existing == null) 
         {
-            EmpId = dto.EmpId,
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            Mobile = dto.Mobile,
-            Email = dto.Email,
-        };
-        return await _repository.AddAsync(manager);
-    }
-
-    public async Task<Manager> UpdateManagerAsync(int managerId, ManagerDTO dto)
-    {
-        var manager = new Manager
+            throw new Exception("Manager not Found");
+        }
+        else
         {
-            EmpId = dto.EmpId,
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            Mobile = dto.Mobile,
-            Email = dto.Email
-        };
-        return await _repository.UpdateAsync(managerId, manager);
+            await _managerrepository.DeleteAsync(id);
+            return true;
+        }
+
     }
 
-    public async Task<bool> DeleteManagerAsync(int managerId)
-    {
-        return await _repository.DeleteAsync(managerId);
-    }
+    
 }
 
     

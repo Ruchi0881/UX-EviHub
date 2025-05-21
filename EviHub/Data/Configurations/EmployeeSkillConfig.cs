@@ -12,9 +12,9 @@ namespace EviHub.Data.Configurations
         builder.HasKey(es => es.EmployeeSkillId);
 
         builder.HasOne<Employee>()
-            .WithMany()
+            .WithMany(x=>x.EmployeeSkills)
             .HasForeignKey(es => es.EmpId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.NoAction);
 
         builder.HasOne<Skills>()
             .WithMany()

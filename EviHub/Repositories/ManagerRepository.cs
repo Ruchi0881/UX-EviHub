@@ -26,9 +26,9 @@ namespace EviHub.Repositories
             return manager;
         }
 
-        public async Task<Manager> UpdateAsync(int managerId, Manager updatedManager)
+        public async Task<Manager> UpdateAsync(int id, Manager updatedManager)
         {
-            var manager = await _context.Managers.FindAsync(managerId);
+            var manager = await _context.Managers.FindAsync(id);
             if (manager == null) return null;
 
             manager.EmpId = updatedManager.EmpId;
@@ -40,10 +40,15 @@ namespace EviHub.Repositories
             await _context.SaveChangesAsync();
             return manager;
         }
-
-        public async Task<bool> DeleteAsync(int managerId)
+        public  async Task<Manager> GetByIdAsync(int id)
         {
-            var manager = await _context.Managers.FindAsync(managerId);
+            return await _context.Managers
+                .FirstOrDefaultAsync (m => m.ManagerId == id);
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var manager = await _context.Managers.FindAsync(id);
             if (manager == null) return false;
 
             _context.Managers.Remove(manager);

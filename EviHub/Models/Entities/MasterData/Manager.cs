@@ -11,7 +11,7 @@ namespace EviHub.EviHub.Core.Entities.MasterData
         public  required string LastName { get; set; }
         public required  string Email { get; set; }
         public required string Mobile { get; set; }
-        public ICollection<Employee>EmployeesUnderManager { get; set; }//one to many
+        public ICollection<Employee> EmployeesUnderManager { get; set; }//one to many
 
     }
 }
