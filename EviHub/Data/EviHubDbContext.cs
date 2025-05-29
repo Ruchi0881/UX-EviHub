@@ -22,7 +22,7 @@ namespace EviHub.Data
         public DbSet<ProposalWork> ProposalWorks { get; set; }
         public DbSet<EmployeeProject> EmployeeProjects { get; set; }
         public DbSet<ProjectProgress> ProjectProgresses { get; set; }
-        public DbSet<EmployeeSkill> EmployeeSkills { get; set; }
+        
         //Master Data
         public DbSet<Certification> Certification { get; set; }
         public DbSet<Designation> Designations { get; set; }
@@ -47,7 +47,6 @@ namespace EviHub.Data
             modelBuilder.ApplyConfiguration(new CertificationCategoryConfig());
             modelBuilder.ApplyConfiguration(new CertificationProgressConfig());
             modelBuilder.ApplyConfiguration(new EmployeeProjectConfig());
-            modelBuilder.ApplyConfiguration(new EmployeeSkillConfig());
             modelBuilder.ApplyConfiguration(new ProjectProgressConfig());
 
         }

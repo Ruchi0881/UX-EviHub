@@ -13,9 +13,9 @@ namespace EviHub.Data.Configurations
             builder.Property(l => l.PasswordHash).IsRequired().HasMaxLength(255);
 
             builder.HasOne<Employee>()
-                .WithOne()
+                .WithOne(e => e.Login)
                 .HasForeignKey<Login>(l => l.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 

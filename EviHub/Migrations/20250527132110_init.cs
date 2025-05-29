@@ -96,6 +96,19 @@ namespace EviHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserRoles",
+                columns: table => new
+                {
+                    UserRoleId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoleName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserRoles", x => x.UserRoleId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Certification",
                 columns: table => new
                 {
@@ -124,78 +137,12 @@ namespace EviHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CertificationProgresses",
-                columns: table => new
-                {
-                    CertificationProgressId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CertificationId = table.Column<int>(type: "int", nullable: false),
-                    EmpId = table.Column<int>(type: "int", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CertificationProgresses", x => x.CertificationProgressId);
-                    table.ForeignKey(
-                        name: "FK_CertificationProgresses_Certification_CertificationId",
-                        column: x => x.CertificationId,
-                        principalTable: "Certification",
-                        principalColumn: "CertificationId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EmployeeCertifications",
-                columns: table => new
-                {
-                    EmpCertId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EmpId = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    CertificationId = table.Column<int>(type: "int", nullable: false),
-                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EmployeeCertifications", x => x.EmpCertId);
-                    table.ForeignKey(
-                        name: "FK_EmployeeCertifications_Certification_CertificationId",
-                        column: x => x.CertificationId,
-                        principalTable: "Certification",
-                        principalColumn: "CertificationId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EmployeeProjects",
-                columns: table => new
-                {
-                    EmpProjectId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EmpId = table.Column<int>(type: "int", nullable: false),
-                    ProjectId = table.Column<int>(type: "int", nullable: false),
-                    AssignedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EmployeeProjects", x => x.EmpProjectId);
-                    table.ForeignKey(
-                        name: "FK_EmployeeProjects_Projects_ProjectId",
-                        column: x => x.ProjectId,
-                        principalTable: "Projects",
-                        principalColumn: "ProjectId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
                     EmpId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
@@ -206,11 +153,15 @@ namespace EviHub.Migrations
                     ManagerId = table.Column<int>(type: "int", nullable: true),
                     ProjectId = table.Column<int>(type: "int", nullable: true),
                     GenderId = table.Column<int>(type: "int", nullable: false),
+                    SkillId = table.Column<int>(type: "int", nullable: false),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ProposalWorkId = table.Column<int>(type: "int", nullable: false),
+                    CertificationProgressId = table.Column<int>(type: "int", nullable: false),
                     EmergencyContact = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     IsAdmin = table.Column<bool>(type: "bit", nullable: true, defaultValue: false),
                     CertificationId = table.Column<int>(type: "int", nullable: true),
-                    EmployeeEmpId = table.Column<int>(type: "int", nullable: true),
-                    UserRoleRoleId = table.Column<int>(type: "int", nullable: true)
+                    EmployeeEmpId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -250,35 +201,105 @@ namespace EviHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EmployeeSkills",
+                name: "CertificationProgresses",
                 columns: table => new
                 {
-                    EmployeeSkillId = table.Column<int>(type: "int", nullable: false)
+                    CertificationProgressId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CertificationId = table.Column<int>(type: "int", nullable: false),
                     EmpId = table.Column<int>(type: "int", nullable: false),
-                    SkillId = table.Column<int>(type: "int", nullable: false),
-                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false),
-                    SkillsSkillId = table.Column<int>(type: "int", nullable: false)
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EmployeeSkills", x => x.EmployeeSkillId);
+                    table.PrimaryKey("PK_CertificationProgresses", x => x.CertificationProgressId);
                     table.ForeignKey(
-                        name: "FK_EmployeeSkills_Employees_EmpId",
-                        column: x => x.EmpId,
+                        name: "FK_CertificationProgresses_Certification_CertificationId",
+                        column: x => x.CertificationId,
+                        principalTable: "Certification",
+                        principalColumn: "CertificationId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CertificationProgresses_Employees_EmployeeEmpId",
+                        column: x => x.EmployeeEmpId,
                         principalTable: "Employees",
-                        principalColumn: "EmpId");
+                        principalColumn: "EmpId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EmployeeCertifications",
+                columns: table => new
+                {
+                    EmpCertId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmpId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    CertificationId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeeCertifications", x => x.EmpCertId);
                     table.ForeignKey(
-                        name: "FK_EmployeeSkills_Employees_EmployeeEmpId",
+                        name: "FK_EmployeeCertifications_Certification_CertificationId",
+                        column: x => x.CertificationId,
+                        principalTable: "Certification",
+                        principalColumn: "CertificationId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EmployeeCertifications_Employees_EmployeeEmpId",
+                        column: x => x.EmployeeEmpId,
+                        principalTable: "Employees",
+                        principalColumn: "EmpId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EmployeeProjects",
+                columns: table => new
+                {
+                    EmpProjectId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmpId = table.Column<int>(type: "int", nullable: false),
+                    ProjectId = table.Column<int>(type: "int", nullable: false),
+                    AssignedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeeProjects", x => x.EmpProjectId);
+                    table.ForeignKey(
+                        name: "FK_EmployeeProjects_Employees_EmployeeEmpId",
                         column: x => x.EmployeeEmpId,
                         principalTable: "Employees",
                         principalColumn: "EmpId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_EmployeeSkills_Skills_SkillId",
-                        column: x => x.SkillId,
-                        principalTable: "Skills",
-                        principalColumn: "SkillId",
+                        name: "FK_EmployeeProjects_Projects_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "Projects",
+                        principalColumn: "ProjectId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EmployeeSkills",
+                columns: table => new
+                {
+                    EmployeesEmpId = table.Column<int>(type: "int", nullable: false),
+                    SkillsSkillId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeeSkills", x => new { x.EmployeesEmpId, x.SkillsSkillId });
+                    table.ForeignKey(
+                        name: "FK_EmployeeSkills_Employees_EmployeesEmpId",
+                        column: x => x.EmployeesEmpId,
+                        principalTable: "Employees",
+                        principalColumn: "EmpId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_EmployeeSkills_Skills_SkillsSkillId",
@@ -289,29 +310,53 @@ namespace EviHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EmployeeUserRole",
+                columns: table => new
+                {
+                    EmployeesEmpId = table.Column<int>(type: "int", nullable: false),
+                    UserRolesUserRoleId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeeUserRole", x => new { x.EmployeesEmpId, x.UserRolesUserRoleId });
+                    table.ForeignKey(
+                        name: "FK_EmployeeUserRole_Employees_EmployeesEmpId",
+                        column: x => x.EmployeesEmpId,
+                        principalTable: "Employees",
+                        principalColumn: "EmpId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EmployeeUserRole_UserRoles_UserRolesUserRoleId",
+                        column: x => x.UserRolesUserRoleId,
+                        principalTable: "UserRoles",
+                        principalColumn: "UserRoleId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Logins",
                 columns: table => new
                 {
                     UserId = table.Column<int>(type: "int", nullable: false),
                     EmpId = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
+                    PasswordHash = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Logins", x => x.UserId);
                     table.ForeignKey(
-                        name: "FK_Logins_Employees_EmpId",
-                        column: x => x.EmpId,
+                        name: "FK_Logins_Employees_EmployeeEmpId",
+                        column: x => x.EmployeeEmpId,
                         principalTable: "Employees",
                         principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Logins_Employees_UserId",
                         column: x => x.UserId,
                         principalTable: "Employees",
-                        principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "EmpId");
                 });
 
             migrationBuilder.CreateTable(
@@ -352,52 +397,17 @@ namespace EviHub.Migrations
                     ProposalName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     ProposalDescription = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     ProposalDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProposedBy = table.Column<int>(type: "int", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
+                    EmpId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Proposals", x => x.ProposalId);
                     table.ForeignKey(
-                        name: "FK_Proposals_Employees_EmployeeEmpId",
-                        column: x => x.EmployeeEmpId,
+                        name: "FK_Proposals_Employees_EmpId",
+                        column: x => x.EmpId,
                         principalTable: "Employees",
                         principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Proposals_Employees_ProposedBy",
-                        column: x => x.ProposedBy,
-                        principalTable: "Employees",
-                        principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserRoles",
-                columns: table => new
-                {
-                    RoleId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserRoleId = table.Column<int>(type: "int", nullable: false),
-                    RoleName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    UserRolesRoleId = table.Column<int>(type: "int", nullable: false),
-                    EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserRoles", x => x.RoleId);
-                    table.ForeignKey(
-                        name: "FK_UserRoles_Employees_EmployeeEmpId",
-                        column: x => x.EmployeeEmpId,
-                        principalTable: "Employees",
-                        principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_UserRoles_UserRoles_UserRolesRoleId",
-                        column: x => x.UserRolesRoleId,
-                        principalTable: "UserRoles",
-                        principalColumn: "RoleId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -410,20 +420,33 @@ namespace EviHub.Migrations
                     ProposalId = table.Column<int>(type: "int", nullable: false),
                     EmpId = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true, defaultValue: true),
+                    ProposalId1 = table.Column<int>(type: "int", nullable: false),
                     EmployeeEmpId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProposalWorks", x => x.ProposalWorkId);
                     table.ForeignKey(
-                        name: "FK_ProposalWorks_Employees_EmployeeEmpId",
-                        column: x => x.EmployeeEmpId,
+                        name: "FK_ProposalWorks_Employees_EmpId",
+                        column: x => x.EmpId,
                         principalTable: "Employees",
                         principalColumn: "EmpId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_ProposalWorks_Employees_EmployeeEmpId",
+                        column: x => x.EmployeeEmpId,
+                        principalTable: "Employees",
+                        principalColumn: "EmpId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
                         name: "FK_ProposalWorks_Proposals_ProposalId",
                         column: x => x.ProposalId,
+                        principalTable: "Proposals",
+                        principalColumn: "ProposalId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProposalWorks_Proposals_ProposalId1",
+                        column: x => x.ProposalId1,
                         principalTable: "Proposals",
                         principalColumn: "ProposalId",
                         onDelete: ReferentialAction.Cascade);
@@ -506,35 +529,19 @@ namespace EviHub.Migrations
                 column: "ProjectId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employees_UserRoleRoleId",
-                table: "Employees",
-                column: "UserRoleRoleId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EmployeeSkills_EmpId",
-                table: "EmployeeSkills",
-                column: "EmpId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EmployeeSkills_EmployeeEmpId",
-                table: "EmployeeSkills",
-                column: "EmployeeEmpId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EmployeeSkills_SkillId",
-                table: "EmployeeSkills",
-                column: "SkillId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_EmployeeSkills_SkillsSkillId",
                 table: "EmployeeSkills",
                 column: "SkillsSkillId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Logins_EmpId",
+                name: "IX_EmployeeUserRole_UserRolesUserRoleId",
+                table: "EmployeeUserRole",
+                column: "UserRolesUserRoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Logins_EmployeeEmpId",
                 table: "Logins",
-                column: "EmpId",
-                unique: true);
+                column: "EmployeeEmpId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProjectProgresses_EmployeeEmpId",
@@ -553,14 +560,14 @@ namespace EviHub.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Proposals_EmployeeEmpId",
+                name: "IX_Proposals_EmpId",
                 table: "Proposals",
-                column: "EmployeeEmpId");
+                column: "EmpId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Proposals_ProposedBy",
-                table: "Proposals",
-                column: "ProposedBy");
+                name: "IX_ProposalWorks_EmpId",
+                table: "ProposalWorks",
+                column: "EmpId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProposalWorks_EmployeeEmpId",
@@ -573,72 +580,20 @@ namespace EviHub.Migrations
                 column: "ProposalId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProposalWorks_ProposalId1",
+                table: "ProposalWorks",
+                column: "ProposalId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Skills_SkillName",
                 table: "Skills",
                 column: "SkillName",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserRoles_EmployeeEmpId",
-                table: "UserRoles",
-                column: "EmployeeEmpId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserRoles_UserRolesRoleId",
-                table: "UserRoles",
-                column: "UserRolesRoleId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_CertificationProgresses_Employees_EmployeeEmpId",
-                table: "CertificationProgresses",
-                column: "EmployeeEmpId",
-                principalTable: "Employees",
-                principalColumn: "EmpId",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_EmployeeCertifications_Employees_EmployeeEmpId",
-                table: "EmployeeCertifications",
-                column: "EmployeeEmpId",
-                principalTable: "Employees",
-                principalColumn: "EmpId",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_EmployeeProjects_Employees_EmployeeEmpId",
-                table: "EmployeeProjects",
-                column: "EmployeeEmpId",
-                principalTable: "Employees",
-                principalColumn: "EmpId",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Employees_UserRoles_UserRoleRoleId",
-                table: "Employees",
-                column: "UserRoleRoleId",
-                principalTable: "UserRoles",
-                principalColumn: "RoleId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Certification_CertificationCategories_CategoryId",
-                table: "Certification");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Certification_CertificationCategories_CertificationCategoryCategoryId",
-                table: "Certification");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Employees_Certification_CertificationId",
-                table: "Employees");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_UserRoles_Employees_EmployeeEmpId",
-                table: "UserRoles");
-
             migrationBuilder.DropTable(
                 name: "CertificationProgresses");
 
@@ -650,6 +605,9 @@ namespace EviHub.Migrations
 
             migrationBuilder.DropTable(
                 name: "EmployeeSkills");
+
+            migrationBuilder.DropTable(
+                name: "EmployeeUserRole");
 
             migrationBuilder.DropTable(
                 name: "Logins");
@@ -664,16 +622,16 @@ namespace EviHub.Migrations
                 name: "Skills");
 
             migrationBuilder.DropTable(
+                name: "UserRoles");
+
+            migrationBuilder.DropTable(
                 name: "Proposals");
 
             migrationBuilder.DropTable(
-                name: "CertificationCategories");
+                name: "Employees");
 
             migrationBuilder.DropTable(
                 name: "Certification");
-
-            migrationBuilder.DropTable(
-                name: "Employees");
 
             migrationBuilder.DropTable(
                 name: "Designations");
@@ -688,7 +646,7 @@ namespace EviHub.Migrations
                 name: "Projects");
 
             migrationBuilder.DropTable(
-                name: "UserRoles");
+                name: "CertificationCategories");
         }
     }
 }

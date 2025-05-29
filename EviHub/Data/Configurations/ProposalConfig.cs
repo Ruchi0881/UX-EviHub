@@ -14,10 +14,7 @@ namespace EviHub.Data.Configurations
             builder.Property(p => p.ProposalDate).IsRequired();
             builder.Property(p => p.IsActive).HasDefaultValue(true).IsRequired();
 
-            builder.HasOne<Employee>()
-                .WithMany()
-                .HasForeignKey(p => p.ProposedBy)//EmpId(FK)
-                .OnDelete(DeleteBehavior.Restrict);
+           
         }
     }
 

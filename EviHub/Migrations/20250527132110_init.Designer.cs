@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EviHub.Migrations
 {
     [DbContext(typeof(EviHubDbContext))]
-    [Migration("20250521135449_init")]
+    [Migration("20250527132110_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -24,6 +24,36 @@ namespace EviHub.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("EmployeeSkills", b =>
+                {
+                    b.Property<int>("EmployeesEmpId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkillsSkillId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EmployeesEmpId", "SkillsSkillId");
+
+                    b.HasIndex("SkillsSkillId");
+
+                    b.ToTable("EmployeeSkills");
+                });
+
+            modelBuilder.Entity("EmployeeUserRole", b =>
+                {
+                    b.Property<int>("EmployeesEmpId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserRolesUserRoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EmployeesEmpId", "UserRolesUserRoleId");
+
+                    b.HasIndex("UserRolesUserRoleId");
+
+                    b.ToTable("EmployeeUserRole");
+                });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.CertificationCategory", b =>
                 {
@@ -86,6 +116,9 @@ namespace EviHub.Migrations
                     b.Property<int?>("CertificationId")
                         .HasColumnType("int");
 
+                    b.Property<int>("CertificationProgressId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DOB")
                         .HasColumnType("datetime2");
 
@@ -111,6 +144,9 @@ namespace EviHub.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("GenderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Interests")
@@ -139,7 +175,16 @@ namespace EviHub.Migrations
                     b.Property<int?>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserRoleRoleId")
+                    b.Property<int>("ProposalWorkId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkillId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("EmpId");
@@ -155,8 +200,6 @@ namespace EviHub.Migrations
                     b.HasIndex("ManagerId");
 
                     b.HasIndex("ProjectId");
-
-                    b.HasIndex("UserRoleRoleId");
 
                     b.ToTable("Employees");
                 });
@@ -219,45 +262,15 @@ namespace EviHub.Migrations
                     b.ToTable("EmployeeProjects");
                 });
 
-            modelBuilder.Entity("EviHub.EviHub.Core.Entities.EmployeeSkill", b =>
-                {
-                    b.Property<int>("EmployeeSkillId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeSkillId"));
-
-                    b.Property<int>("EmpId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EmployeeEmpId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SkillId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SkillsSkillId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeeSkillId");
-
-                    b.HasIndex("EmpId");
-
-                    b.HasIndex("EmployeeEmpId");
-
-                    b.HasIndex("SkillId");
-
-                    b.HasIndex("SkillsSkillId");
-
-                    b.ToTable("EmployeeSkills");
-                });
-
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.Login", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<int>("EmpId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeeEmpId")
                         .HasColumnType("int");
 
                     b.Property<string>("PasswordHash")
@@ -272,8 +285,7 @@ namespace EviHub.Migrations
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("EmpId")
-                        .IsUnique();
+                    b.HasIndex("EmployeeEmpId");
 
                     b.ToTable("Logins");
                 });
@@ -470,7 +482,7 @@ namespace EviHub.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProposalId"));
 
-                    b.Property<int>("EmployeeEmpId")
+                    b.Property<int>("EmpId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
@@ -491,14 +503,9 @@ namespace EviHub.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("ProposedBy")
-                        .HasColumnType("int");
-
                     b.HasKey("ProposalId");
 
-                    b.HasIndex("EmployeeEmpId");
-
-                    b.HasIndex("ProposedBy");
+                    b.HasIndex("EmpId");
 
                     b.ToTable("Proposals");
                 });
@@ -525,44 +532,68 @@ namespace EviHub.Migrations
                     b.Property<int>("ProposalId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProposalId1")
+                        .HasColumnType("int");
+
                     b.HasKey("ProposalWorkId");
+
+                    b.HasIndex("EmpId");
 
                     b.HasIndex("EmployeeEmpId");
 
                     b.HasIndex("ProposalId");
+
+                    b.HasIndex("ProposalId1");
 
                     b.ToTable("ProposalWorks");
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.UserRole", b =>
                 {
-                    b.Property<int>("RoleId")
+                    b.Property<int>("UserRoleId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"));
-
-                    b.Property<int>("EmployeeEmpId")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserRoleId"));
 
                     b.Property<string>("RoleName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("UserRoleId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserRolesRoleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RoleId");
-
-                    b.HasIndex("EmployeeEmpId");
-
-                    b.HasIndex("UserRolesRoleId");
+                    b.HasKey("UserRoleId");
 
                     b.ToTable("UserRoles");
+                });
+
+            modelBuilder.Entity("EmployeeSkills", b =>
+                {
+                    b.HasOne("EviHub.EviHub.Core.Entities.Employee", null)
+                        .WithMany()
+                        .HasForeignKey("EmployeesEmpId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EviHub.EviHub.Core.Entities.MasterData.Skills", null)
+                        .WithMany()
+                        .HasForeignKey("SkillsSkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EmployeeUserRole", b =>
+                {
+                    b.HasOne("EviHub.EviHub.Core.Entities.Employee", null)
+                        .WithMany()
+                        .HasForeignKey("EmployeesEmpId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EviHub.EviHub.Core.Entities.UserRole", null)
+                        .WithMany()
+                        .HasForeignKey("UserRolesUserRoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.CertificationProgress", b =>
@@ -614,10 +645,6 @@ namespace EviHub.Migrations
                         .WithMany("Employees")
                         .HasForeignKey("ProjectId");
 
-                    b.HasOne("EviHub.EviHub.Core.Entities.UserRole", null)
-                        .WithMany("Employees")
-                        .HasForeignKey("UserRoleRoleId");
-
                     b.Navigation("Designation");
 
                     b.Navigation("Gender");
@@ -665,49 +692,18 @@ namespace EviHub.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("EviHub.EviHub.Core.Entities.EmployeeSkill", b =>
+            modelBuilder.Entity("EviHub.EviHub.Core.Entities.Login", b =>
                 {
-                    b.HasOne("EviHub.EviHub.Core.Entities.Employee", null)
-                        .WithMany("EmployeeSkills")
-                        .HasForeignKey("EmpId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
                     b.HasOne("EviHub.EviHub.Core.Entities.Employee", "Employee")
                         .WithMany()
                         .HasForeignKey("EmployeeEmpId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EviHub.EviHub.Core.Entities.MasterData.Skills", null)
-                        .WithMany()
-                        .HasForeignKey("SkillId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EviHub.EviHub.Core.Entities.MasterData.Skills", "Skills")
-                        .WithMany("EmployeeSkills")
-                        .HasForeignKey("SkillsSkillId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Employee");
-
-                    b.Navigation("Skills");
-                });
-
-            modelBuilder.Entity("EviHub.EviHub.Core.Entities.Login", b =>
-                {
-                    b.HasOne("EviHub.EviHub.Core.Entities.Employee", "Employee")
-                        .WithOne("Login")
-                        .HasForeignKey("EviHub.EviHub.Core.Entities.Login", "EmpId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("EviHub.EviHub.Core.Entities.Employee", null)
-                        .WithOne()
+                        .WithOne("Login")
                         .HasForeignKey("EviHub.EviHub.Core.Entities.Login", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Employee");
@@ -752,15 +748,9 @@ namespace EviHub.Migrations
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.Proposal", b =>
                 {
                     b.HasOne("EviHub.EviHub.Core.Entities.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeEmpId")
+                        .WithMany("Proposals")
+                        .HasForeignKey("EmpId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EviHub.EviHub.Core.Entities.Employee", null)
-                        .WithMany()
-                        .HasForeignKey("ProposedBy")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Employee");
@@ -769,39 +759,32 @@ namespace EviHub.Migrations
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.ProposalWork", b =>
                 {
                     b.HasOne("EviHub.EviHub.Core.Entities.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmpId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EviHub.EviHub.Core.Entities.Employee", null)
                         .WithMany("ProposalWorks")
                         .HasForeignKey("EmployeeEmpId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("EviHub.EviHub.Core.Entities.Proposal", null)
+                        .WithMany("ProposalWorks")
+                        .HasForeignKey("ProposalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EviHub.EviHub.Core.Entities.Proposal", "Proposal")
-                        .WithMany("ProposalWorks")
-                        .HasForeignKey("ProposalId")
+                        .WithMany()
+                        .HasForeignKey("ProposalId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Employee");
 
                     b.Navigation("Proposal");
-                });
-
-            modelBuilder.Entity("EviHub.EviHub.Core.Entities.UserRole", b =>
-                {
-                    b.HasOne("EviHub.EviHub.Core.Entities.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeEmpId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EviHub.EviHub.Core.Entities.UserRole", "UserRoles")
-                        .WithMany()
-                        .HasForeignKey("UserRolesRoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Employee");
-
-                    b.Navigation("UserRoles");
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.CertificationCategory", b =>
@@ -817,8 +800,6 @@ namespace EviHub.Migrations
 
                     b.Navigation("EmployeeProjects");
 
-                    b.Navigation("EmployeeSkills");
-
                     b.Navigation("EmployeesUnderManager");
 
                     b.Navigation("Login")
@@ -827,6 +808,8 @@ namespace EviHub.Migrations
                     b.Navigation("ProjectProgresses");
 
                     b.Navigation("ProposalWorks");
+
+                    b.Navigation("Proposals");
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.MasterData.Certification", b =>
@@ -860,19 +843,9 @@ namespace EviHub.Migrations
                     b.Navigation("ProjectProgresses");
                 });
 
-            modelBuilder.Entity("EviHub.EviHub.Core.Entities.MasterData.Skills", b =>
-                {
-                    b.Navigation("EmployeeSkills");
-                });
-
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.Proposal", b =>
                 {
                     b.Navigation("ProposalWorks");
-                });
-
-            modelBuilder.Entity("EviHub.EviHub.Core.Entities.UserRole", b =>
-                {
-                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,6 +14,7 @@
         public int? ManagerId { get; set; }
         public int? ProjectId { get; set; }
         public int GenderId { get; set; }
+        public int SkillId { get; set; }
         public string EmergencyContact { get; set; }
         public bool? IsAdmin { get; set; }
     }

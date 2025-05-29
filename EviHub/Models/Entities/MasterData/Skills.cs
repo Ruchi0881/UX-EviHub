@@ -7,6 +7,6 @@ namespace EviHub.EviHub.Core.Entities.MasterData
        [Key]
         public int SkillId { get; set; }
         public string SkillName { get; set; }
-        public ICollection<EmployeeSkill> EmployeeSkills { get; set; }//Many to Many
+        public ICollection<Employee> Employees { get; set; }//Many to Many
     }
 }

@@ -11,15 +11,15 @@ namespace EviHub.Data.Configurations
             builder.HasKey(pw => pw.ProposalWorkId);
             builder.Property(p => p.IsActive).HasDefaultValue(true);
 
-            //builder.HasOne<Proposal>()
-            //    .WithMany()
-            //    .HasForeignKey(pw => pw.ProposalId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne<Proposal>()
+                .WithMany(P => P.ProposalWorks)
+                 .HasForeignKey(pw => pw.ProposalId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            //builder.HasOne<Employee>()
-            //    .WithMany()
-            //    .HasForeignKey(pw => pw.EmpId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne<Employee>()
+                .WithMany(p => p.ProposalWorks)
+               // .HasForeignKey(pw => pw.EmpId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 

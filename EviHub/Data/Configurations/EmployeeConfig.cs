@@ -36,11 +36,18 @@ namespace EviHub.Data.Configurations
 
             builder.HasOne(e=>e.Login )
                 .WithOne(l => l.Employee)
-                .HasForeignKey<Login>(l => l.EmpId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey<Login>(l => l.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            //builder.HasMany(u =>u.UserRoles)
+            //    .WithOne(e =>e.Employee)
+            //    .HasForeignKey(r => r.RoleId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+           
 
 
-            //builder.HasMany(x=>x.EmployeesUnderManager).WithOne(x=>x.Manager)
+            
 
 
         }

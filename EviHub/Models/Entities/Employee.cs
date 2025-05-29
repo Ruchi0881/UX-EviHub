@@ -6,8 +6,8 @@ namespace EviHub.EviHub.Core.Entities
 {
     public class Employee
     {
+        public int Id { get; set; }
         [Key]
-        //public int Id { get; set; }
         public int EmpId { get; set; }
         public string FirstName { get; set; }
         public  string LastName { get; set; }
@@ -15,10 +15,17 @@ namespace EviHub.EviHub.Core.Entities
         public string Mobile { get; set; }
         public DateTime DOB { get; set; }
         public string Interests { get; set; }
-        public int DesignationId { get; set; }
-        public int? ManagerId { get; set; }
-        public int? ProjectId { get; set; }
-        public int   GenderId { get; set; }
+        public int DesignationId { get; set; }//FK
+        public int? ManagerId { get; set; }//FK
+        public int? ProjectId { get; set; }//FK
+        public int   GenderId { get; set; }//FK
+        public int  SkillId { get; set; }//FK
+        public int RoleId { get; set; }//FK
+        public int UserId { get; set; }//FK
+        //public int ProposalId { get; set; } //FK
+
+        public int ProposalWorkId { get; set; }//FK
+        public int CertificationProgressId { get; set; }//FK
         public string EmergencyContact { get; set; }
         public bool? IsAdmin { get; set; }
         
@@ -29,12 +36,14 @@ namespace EviHub.EviHub.Core.Entities
         public virtual Gender Gender { get; set; }//Gender of Employee
         public virtual Login Login { get; set; }//one to one with Login
         public ICollection<Employee> EmployeesUnderManager { get; set; }//one to many(Employees managed by this employee(Manager)
-        public ICollection<EmployeeSkill>EmployeeSkills { get; set; }//Employee can have multiple skills
+        public ICollection<Skills>Skills { get; set; }//Employee can have multiple skills
+        public ICollection<UserRole> UserRoles { get; set; }//Employees can have multiple Roles
         public ICollection<EmployeeCertification>EmployeeCertifications { get; set; }//Multiple Certifications
         public ICollection<EmployeeProject> EmployeeProjects { get; set; }//Multiple Projects
         public ICollection<ProposalWork> ProposalWorks { get; set; }//Multiple Proposals
         public ICollection<CertificationProgress> CertificationProgresses { get; set; }//Many to Many
         public ICollection<ProjectProgress> ProjectProgresses { get; set; }//Many to many with Projects
+        public ICollection<Proposal>Proposals { get; set; }//Employee can work on and propose many proposals
 
 
         
