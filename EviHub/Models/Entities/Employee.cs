@@ -17,7 +17,7 @@ namespace EviHub.EviHub.Core.Entities
         public string Interests { get; set; }
         public int DesignationId { get; set; }//FK
         public int? ManagerId { get; set; }//FK
-        public int? ProjectId { get; set; }//FK
+        //public int? ProjectId { get; set; }//FK
         public int   GenderId { get; set; }//FK
         public int  SkillId { get; set; }//FK
         public int RoleId { get; set; }//FK
@@ -34,17 +34,14 @@ namespace EviHub.EviHub.Core.Entities
         public virtual Designation Designation { get; set; }//designation of Employee
         public virtual Project Project { get; set; }//Project of Employee
         public virtual Gender Gender { get; set; }//Gender of Employee
-        public virtual Login Login { get; set; }//one to one with Login
+       
         public ICollection<Employee> EmployeesUnderManager { get; set; }//one to many(Employees managed by this employee(Manager)
         public ICollection<Skills>Skills { get; set; }//Employee can have multiple skills
-        public ICollection<UserRole> UserRoles { get; set; }//Employees can have multiple Roles
-        public ICollection<EmployeeCertification>EmployeeCertifications { get; set; }//Multiple Certifications
+       
         public ICollection<EmployeeProject> EmployeeProjects { get; set; }//Multiple Projects
-        public ICollection<ProposalWork> ProposalWorks { get; set; }//Multiple Proposals
-        public ICollection<CertificationProgress> CertificationProgresses { get; set; }//Many to Many
-        public ICollection<ProjectProgress> ProjectProgresses { get; set; }//Many to many with Projects
-        public ICollection<Proposal>Proposals { get; set; }//Employee can work on and propose many proposals
-
+        
+       
+        
 
         
 

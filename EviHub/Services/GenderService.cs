@@ -33,7 +33,7 @@ namespace EviHub.Services
         public async Task<GenderDTO> UpdateGenderAsync(int id, GenderDTO dto)
         {
             var existinggen = await _genderrepository.GetByIdAsync(id);
-            if (existinggen != null) return null;
+            if (existinggen == null) return null;
             existinggen.GenderName = dto.GenderName;
             var updated = await _genderrepository.UpdateAsync(id,existinggen);
             return _mapper.Map<GenderDTO>(updated);

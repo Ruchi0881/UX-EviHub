@@ -12,15 +12,18 @@ namespace EviHub.Data.Configurations
         {
             builder.HasKey(ep => ep.EmpProjectId);
 
-            //builder.HasOne<Employee>()
-            //    .WithMany()
-            //    .HasForeignKey(ep => ep.EmpId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            builder
+           .HasOne(ep => ep.Employee) // Each EmployeeProject is linked to one Employee
+           .WithMany(e => e.EmployeeProjects) // An Employee can have many EmployeeProjects
+           .HasForeignKey(ep => ep.EmpId) // Foreign key on EmployeeId
+           .OnDelete(DeleteBehavior.Cascade); // Cascade delete if the Employee is deleted
 
-            //builder.HasOne<Project>()
-            //    .WithMany()
-            //    .HasForeignKey(ep => ep.ProjectId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            builder
+                .HasOne(ep => ep.Project) // Each EmployeeProject is linked to one Project
+                .WithMany(p => p.EmployeeProject) // A Project can have many EmployeeProjects
+                .HasForeignKey(ep => ep.ProjectId) // Foreign key on ProjectId
+                .OnDelete(DeleteBehavior.NoAction); // Cascade delete if the Project is deleted
+
         }
     }
 

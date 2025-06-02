@@ -1,4 +1,5 @@
 ﻿using EviHub.Data;
+using EviHub.EviHub.Core.Entities;
 using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -51,6 +52,13 @@ namespace EviHub.Repositories
             _context.Projects.Remove(project);
             await _context.SaveChangesAsync();
             return true;
+        }
+        public async Task<EmployeeProject> AssignAsync(EmployeeProject EmployeeProject)
+        {
+            await _context.EmployeeProjects.AddAsync(EmployeeProject);
+            await _context.SaveChangesAsync();
+            return EmployeeProject;
+
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Models.DTO_s;
+using EviHub.Services;
 using EviHub.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,6 +44,16 @@ namespace EviHub.Controllers
                 return NotFound();
 
             return Ok(updatedSkill);
+        }
+
+        // GET :api/Skill/{id} (GetSkillById)
+        [HttpGet("skills/{id}")]
+        public async Task<IActionResult> GetSkillById(int id)
+        {
+            var skill = await _service.GetSkillByIdAsync(id);
+            if (skill == null)
+                return NotFound($"Skill with ID {id} not found.");
+            return Ok(skill);
         }
 
         // DELETE: api/Skill/{id}(Delete Skills)

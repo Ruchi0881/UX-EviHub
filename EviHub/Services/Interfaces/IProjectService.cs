@@ -10,5 +10,6 @@ namespace EviHub.Services.Interfaces
         Task<ProjectDTO> UpdateProjectAsync(int projectId, ProjectDTO projectDto);
         Task<ProjectDTO?> GetProjectByIdAsync(int ProjectId);
         Task<bool> DeleteProjectAsync(int projectId);
+        Task<EmployeeProjectDTO> AssignProjectAsync(EmployeeProjectDTO EmployeeprojectDto);
     }
 }

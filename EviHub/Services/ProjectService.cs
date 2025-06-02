@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EviHub.EviHub.Core.Entities;
 using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Models.DTO_s;
 using EviHub.Repositories.Interfaces;
@@ -34,7 +35,7 @@ namespace EviHub.Services
         public async Task<ProjectDTO> UpdateProjectAsync(int id, ProjectDTO projectDto)
         {
             var existingproj = await _projectRepository.GetByIdAsync(id);
-            if (existingproj != null) return null;
+            if (existingproj == null) return null;
 
             existingproj.ProjectName = projectDto.ProjectName;
             existingproj.ProjectDescription = projectDto.ProjectDescription;
@@ -61,6 +62,14 @@ namespace EviHub.Services
                 await _projectRepository.DeleteAsync(id);
                 return true;
             }
+
+        }
+
+        public async Task<EmployeeProjectDTO> AssignProjectAsync(EmployeeProjectDTO EmployeeProjectDTO)
+        {
+            var proj = _mapper.Map<EmployeeProject>(EmployeeProjectDTO);
+            var assignproj = await _projectRepository.AssignAsync(proj);
+            return _mapper.Map<EmployeeProjectDTO>(assignproj);
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EviHub.EviHub.Core.Entities.MasterData
 {
@@ -9,9 +10,11 @@ namespace EviHub.EviHub.Core.Entities.MasterData
         public string ProjectName { get; set; }
         public string ProjectDescription { get; set; }
         public bool? IsActive { get; set; }
+        //public int EmpId { get; set; }//FK
         //Navigation Property
+       
         public ICollection<Employee> Employees { get; set; }//one to many(A project can be assigned to many employees)
-        public ICollection<ProjectProgress> ProjectProgresses { get; set; }//Many to many  relationwith Employess
+        public ICollection<EmployeeProject> EmployeeProject { get; set; }//Many to many  relationwith Employess
          
     }
 }

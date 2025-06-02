@@ -36,6 +36,7 @@ namespace EviHub.Services
         {
             var existinggen = await _designationRepository.GetByIdAsync(id);
             if (existinggen == null) return null;
+            existinggen.DesignationName = dto.DesignationName;
             var updated = await _designationRepository.UpdateAsync(id,existinggen);
             return _mapper.Map<DesignationDTO>(updated);
         }

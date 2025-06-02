@@ -1,4 +1,5 @@
-﻿using EviHub.EviHub.Core.Entities.MasterData;
+﻿using EviHub.EviHub.Core.Entities;
+using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Models.DTO_s;
 
 namespace EviHub.Repositories.Interfaces
@@ -10,6 +11,7 @@ namespace EviHub.Repositories.Interfaces
         Task<Project> UpdateAsync(int id, Project project);
         Task<Project> GetByIdAsync(int id);
         Task<bool> DeleteAsync(int id);
+        Task<EmployeeProject> AssignAsync(EmployeeProject Employeeproject);
     }
 }
 

@@ -42,7 +42,7 @@ namespace EviHub.Services
 
             existingcert.CertificationName = dto.CertificationName;
             existingcert.CategoryId = dto.CategoryId;
-            existingcert.IsActive = dto.IsActive;
+            existingcert.Status = dto.Status;
 
             var updated = await _certificationRepository.UpdateAsync(id, existingcert);
             return _mapper.Map<CertificationDTO>(updated);

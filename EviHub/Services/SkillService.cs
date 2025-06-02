@@ -33,7 +33,7 @@ namespace EviHub.Services
         public async Task<SkillDTO> UpdateSkillAsync(int id, SkillDTO skillDto)
         {
             var existingskill = await _skillRepository.GetSkillByIdAsync(id);
-            if (existingskill != null) ;
+            if (existingskill == null) ;
 
             existingskill.SkillName = skillDto.SkillName;
 

@@ -34,7 +34,7 @@ namespace EviHub.Repositories
 
             existing.CertificationName = certification.CertificationName;
             existing.CategoryId = certification.CategoryId;
-            existing.IsActive = certification.IsActive;
+            existing.Status = certification.Status;
 
             await _context.SaveChangesAsync();
             return existing;
@@ -43,7 +43,7 @@ namespace EviHub.Repositories
         public async Task<Certification> GetByIdAsync(int id)
         {
             return await _context.Certifications
-                .FirstOrDefaultAsync(c=>c.CertificationId == id && c.IsActive);
+                .FirstOrDefaultAsync(c=>c.CertificationId == id  );
         }
 
         public async Task<bool> DeleteAsync(int id)

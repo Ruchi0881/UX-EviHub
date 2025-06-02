@@ -34,20 +34,25 @@ namespace EviHub.Data.Configurations
                 .HasForeignKey(e => e.GenderId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(e=>e.Login )
-                .WithOne(l => l.Employee)
-                .HasForeignKey<Login>(l => l.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
+            //builder.HasOne(e=>e.Login )
+            //    .WithOne(l => l.Employee)
+            //    .HasForeignKey<Login>(l => l.UserId)
+            //    .OnDelete(DeleteBehavior.NoAction);
 
             //builder.HasMany(u =>u.UserRoles)
             //    .WithOne(e =>e.Employee)
             //    .HasForeignKey(r => r.RoleId)
             //    .OnDelete(DeleteBehavior.Restrict);
 
-           
+            builder.HasMany(e => e.EmployeeProjects)
+                .WithOne(g => g.Employee)
+                .HasForeignKey(e => e.EmpId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
-            
+
+
+
 
 
         }
