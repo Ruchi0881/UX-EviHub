@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\models\\entities\\employeeproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\entities\\employeeproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\models\\dto\u0027s\\employeeprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\dto\u0027s\\employeeprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\data\\evihubdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\data\\evihubdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\repositories\\projectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\projectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\services\\interfaces\\iprojectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\iprojectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +33,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\services\\interfaces\\iprojectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\services\\interfaces\\iprojectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,14 +54,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\repositories\\interfaces\\iprojectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\interfaces\\iprojectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\models\\entities\\employeeproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\models\\entities\\employeeproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\repositories\\projectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|solutionrelative:evihub\\repositories\\projectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9C20692-B7B5-41DD-A12C-8921219868AD}|EviHub\\EviHub.csproj|c:\\users\\dhanasri.ruchira\\source\\repos\\evihub-2\\evihub\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -254,43 +254,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IProjectService.cs",
-              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Services\\Interfaces\\IProjectService.cs",
-              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\IProjectService.cs",
-              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Services\\Interfaces\\IProjectService.cs",
-              "RelativeToolTip": "EviHub\\Services\\Interfaces\\IProjectService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T11:01:22.694Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ProjectService.cs",
               "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Services\\ProjectService.cs",
               "RelativeDocumentMoniker": "EviHub\\Services\\ProjectService.cs",
               "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Services\\ProjectService.cs",
               "RelativeToolTip": "EviHub\\Services\\ProjectService.cs",
-              "ViewState": "AgIAABgAAAAALjMzMzPrv0oAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T11:03:05.241Z"
+              "WhenOpened": "2025-04-29T11:03:05.241Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EviHubDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Data\\EviHubDbContext.cs",
               "RelativeDocumentMoniker": "EviHub\\Data\\EviHubDbContext.cs",
               "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Data\\EviHubDbContext.cs",
               "RelativeToolTip": "EviHub\\Data\\EviHubDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAArwB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T12:06:47.29Z"
+              "WhenOpened": "2025-05-20T12:06:47.29Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -300,20 +290,20 @@
               "RelativeDocumentMoniker": "EviHub\\Models\\DTO\u0027s\\EmployeeProjectDTO.cs",
               "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Models\\DTO\u0027s\\EmployeeProjectDTO.cs",
               "RelativeToolTip": "EviHub\\Models\\DTO\u0027s\\EmployeeProjectDTO.cs",
-              "ViewState": "AgIAAAoAAACAzMzMzMwMwAEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T19:39:25.711Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProjectsController.cs",
               "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\ProjectsController.cs",
               "RelativeDocumentMoniker": "EviHub\\Controllers\\ProjectsController.cs",
               "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\ProjectsController.cs",
               "RelativeToolTip": "EviHub\\Controllers\\ProjectsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T18:52:54.476Z",
               "EditorCaption": ""
@@ -321,26 +311,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "SkillsController.cs",
-              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\SkillsController.cs",
-              "RelativeDocumentMoniker": "EviHub\\Controllers\\SkillsController.cs",
-              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\SkillsController.cs",
-              "RelativeToolTip": "EviHub\\Controllers\\SkillsController.cs",
-              "ViewState": "AgIAABIAAABgNTMzM/MgwDsAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T18:27:25.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "EviHub\\Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\AdminController.cs",
               "RelativeToolTip": "EviHub\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAH4AAABApJmZmRkawAsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T10:04:36.806Z"
+              "WhenOpened": "2025-05-30T10:04:36.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -356,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "dbo.Certifications.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EviHubDB/True/SqlTable/dbo.Certifications.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EviHubDB/True/SqlTable/dbo.Certifications.sql",
@@ -365,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "dbo.Designations.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EviHubDB/True/SqlTable/dbo.Designations.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EviHubDB/True/SqlTable/dbo.Designations.sql",
@@ -374,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Program.cs",
               "RelativeDocumentMoniker": "EviHub\\Program.cs",
@@ -386,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "dbo.Employees.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EviHubDB/True/SqlTable/dbo.Employees.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EviHubDB/True/SqlTable/dbo.Employees.sql",
@@ -395,7 +374,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 4,
+              "Title": "ProjectRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Repositories\\ProjectRepository.cs",
+              "RelativeDocumentMoniker": "EviHub\\Repositories\\ProjectRepository.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Repositories\\ProjectRepository.cs",
+              "RelativeToolTip": "EviHub\\Repositories\\ProjectRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T13:29:29.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeProject.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Models\\Entities\\EmployeeProject.cs",
+              "RelativeDocumentMoniker": "EviHub\\Models\\Entities\\EmployeeProject.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Models\\Entities\\EmployeeProject.cs",
+              "RelativeToolTip": "EviHub\\Models\\Entities\\EmployeeProject.cs",
+              "ViewState": "AgIAAAUAAADgzMzMzMwzwA4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:36:23.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SkillsController.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\SkillsController.cs",
+              "RelativeDocumentMoniker": "EviHub\\Controllers\\SkillsController.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Controllers\\SkillsController.cs",
+              "RelativeToolTip": "EviHub\\Controllers\\SkillsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T18:27:25.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IProjectService.cs",
+              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "RelativeDocumentMoniker": "EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "RelativeToolTip": "EviHub\\Services\\Interfaces\\IProjectService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T11:01:22.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "IProjectRepository.cs",
               "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Repositories\\Interfaces\\IProjectRepository.cs",
               "RelativeDocumentMoniker": "EviHub\\Repositories\\Interfaces\\IProjectRepository.cs",
@@ -404,30 +435,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T13:28:26.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EmployeeProject.cs",
-              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Models\\Entities\\EmployeeProject.cs",
-              "RelativeDocumentMoniker": "EviHub\\Models\\Entities\\EmployeeProject.cs",
-              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Models\\Entities\\EmployeeProject.cs",
-              "RelativeToolTip": "EviHub\\Models\\Entities\\EmployeeProject.cs",
-              "ViewState": "AgIAAAUAAACAMzMzMzMbwA4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:36:23.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProjectRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Repositories\\ProjectRepository.cs",
-              "RelativeDocumentMoniker": "EviHub\\Repositories\\ProjectRepository.cs",
-              "ToolTip": "C:\\Users\\Dhanasri.Ruchira\\source\\repos\\Evihub-2\\EviHub\\Repositories\\ProjectRepository.cs",
-              "RelativeToolTip": "EviHub\\Repositories\\ProjectRepository.cs",
-              "ViewState": "AgIAACgAAADwZ2ZmZgY2wDsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T13:29:29.652Z"
             },
             {
               "$type": "Document",

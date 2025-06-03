@@ -6,6 +6,6 @@
         public int EmpId { get; set; }
         public int ProjectId { get; set; } 
         public bool IsActive { get; set; }
-        public string AssignedBy { get; set; }
+        public int AssignedBy { get; set; }
     }
 }

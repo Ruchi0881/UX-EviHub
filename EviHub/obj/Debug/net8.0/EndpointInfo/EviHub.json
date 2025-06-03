@@ -1139,8 +1139,8 @@
             "type": "boolean"
           },
           "assignedBy": {
-            "type": "string",
-            "nullable": true
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

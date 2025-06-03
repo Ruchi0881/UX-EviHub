@@ -10,9 +10,9 @@ namespace EviHub.Controllers
     public class ProjectsController : ControllerBase
     {
         private readonly IProjectService _projectService;
-        public ProjectsController(IProjectService _projectService)
+        public ProjectsController(IProjectService projectService)
         {
-            _projectService = _projectService;
+            _projectService = projectService;
         }
         //PROJECTS
         [HttpGet("projects")]
@@ -36,8 +36,8 @@ namespace EviHub.Controllers
         [HttpPost("projects")]
         public async Task<IActionResult> AddProject([FromBody] ProjectDTO dto)
         {
-            var created = await _projectService.AddProjectAsync(dto);
-            return Ok($"Project Added Successfully");
+            var added = await _projectService.AddProjectAsync(dto);
+            return Ok(added);
         }
 
         // Update an existing project
