@@ -1,0 +1,6 @@
+@EviHub2_HostAddress = http://localhost:5074
+
+GET {{EviHub2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
