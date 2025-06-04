@@ -1,9 +1,9 @@
-using EviHub2.Helpers;
-using EviHub2.Repositories;
-using EviHub2.Services;
 using AutoMapper;
-using EviHub2.Data;
 using Microsoft.EntityFrameworkCore;
+using EviHub.Repositories;
+using EviHub.Services;
+using EviHub.Helpers;
+using EviHub.Data;
 //using AutoMapper.Extensions.Microsoft.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);

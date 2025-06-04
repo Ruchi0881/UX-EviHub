@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using EviHub2.DTOs;
-using EviHub2.Models.Entities;
+using EviHub.DTOs;
+using EviHub.Models.Entities;
 
-namespace EviHub2.Helpers
+namespace EviHub.Helpers
 {
     public class MappingProfile : Profile
     {

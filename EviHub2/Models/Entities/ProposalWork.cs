@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EviHub2.Models.Entities
+namespace EviHub.Models.Entities
 {
     public class ProposalWork
     {

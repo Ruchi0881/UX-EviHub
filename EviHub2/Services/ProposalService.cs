@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using EviHub2.DTOs;
-using EviHub2.Models.Entities;
-using EviHub2.Repositories;
+using EviHub.DTOs;
+using EviHub.Models.Entities;
+using EviHub.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace EviHub2.Services
+namespace EviHub.Services
 {
     public class ProposalService : IProposalService
     {

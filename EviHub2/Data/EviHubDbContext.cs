@@ -1,9 +1,9 @@
-﻿using EviHub2.Data.Configurations;
-using EviHub2.Models.Entities;
+﻿using EviHub.Models.Entities;
+using EviHub2.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace EviHub2.Data
+namespace EviHub.Data
 {
     public class EviHubDbContext : DbContext
     {

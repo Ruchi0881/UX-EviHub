@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace EviHub2.Models.Entities
+namespace EviHub.Models.Entities
 {
     public class Employee
     {

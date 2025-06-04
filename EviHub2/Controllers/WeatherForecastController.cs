@@ -1,6 +1,7 @@
+using EviHub;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EviHub2.Controllers
+namespace EviHub.Controllers
 {
     [ApiController]
     [Route("[controller]")]

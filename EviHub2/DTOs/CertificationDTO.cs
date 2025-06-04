@@ -1,4 +1,4 @@
-﻿namespace EviHub2.DTOs
+﻿namespace EviHub.DTOs
 {
     public class CertificationDTO
     {

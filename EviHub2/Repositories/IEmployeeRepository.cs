@@ -1,7 +1,7 @@
-﻿using EviHub2.Data;
-using EviHub2.Models.Entities;
+﻿using EviHub.Models.Entities;
+using EviHub2.Data;
 
-namespace EviHub2.Repositories
+namespace EviHub.Repositories
 {
     public interface IEmployeeRepository
     {

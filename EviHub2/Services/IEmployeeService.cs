@@ -1,7 +1,7 @@
-﻿using EviHub2.DTOs;
+﻿using EviHub.DTOs;
 using EviHub2.Models.Entities;
 
-namespace EviHub2.Services
+namespace EviHub.Services
 {
     public interface IEmployeeService
     {

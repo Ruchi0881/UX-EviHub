@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using EviHub2.Models.Entities;
+using EviHub.Models.Entities;
 
-namespace EviHub2.Repositories
+namespace EviHub.Repositories
 {
     public interface ICertificationRepository
     {

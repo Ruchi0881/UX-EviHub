@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EviHub2.DTOs
+namespace EviHub.DTOs
 {
     public class ProposalWorkDTO
     {

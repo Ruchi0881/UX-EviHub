@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using EviHub2.DTOs;
-using EviHub2.Models.Entities;
-using EviHub2.Services;
+using EviHub.DTOs;
+using EviHub.Models.Entities;
+using EviHub.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EviHub2.Controllers
+namespace EviHub.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,7 +1,7 @@
-﻿using EviHub2.Models.Entities;
+﻿using EviHub.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-namespace EviHub2.Data.Configurations
+namespace EviHub.Data.Configurations
 {
     public class EmployeeConfig :   IEntityTypeConfiguration<Employee>
     {

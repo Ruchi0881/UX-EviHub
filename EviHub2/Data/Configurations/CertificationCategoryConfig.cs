@@ -1,8 +1,8 @@
-﻿using EviHub2.Models.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using EviHub.Models.Entities;
 
-namespace EviHub2.Controllers
+namespace EviHub.Data.Configurations
 {
     public class CertificationCategoryConfig : IEntityTypeConfiguration<CertificationCategory>
     {

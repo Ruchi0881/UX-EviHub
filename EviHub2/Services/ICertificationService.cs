@@ -1,6 +1,6 @@
-﻿using EviHub2.Models.Entities;
+﻿using EviHub.Models.Entities;
 
-namespace EviHub2.Services
+namespace EviHub.Services
 {
     public interface ICertificationService
     {

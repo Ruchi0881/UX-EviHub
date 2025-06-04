@@ -1,9 +1,9 @@
-﻿using EviHub2.Data;
-using EviHub2.Models.Entities;
+﻿using EviHub.Data;
+using EviHub.Models.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
-namespace EviHub2.Repositories
+namespace EviHub.Repositories
 {
     public class CertificationCategoryRepository : ICertificationCategoryRepository
     {

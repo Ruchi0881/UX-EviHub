@@ -1,9 +1,9 @@
-﻿using EviHub2.DTOs;
-using EviHub2.Services;
+﻿using EviHub.DTOs;
+using EviHub.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EviHub2.Controllers
-    
+namespace EviHub.Controllers
+
 {
     [ApiController]
     [Route("api/[Controller]")]

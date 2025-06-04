@@ -1,8 +1,8 @@
-﻿using EviHub2.Models.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using EviHub.Models.Entities;
 
-namespace EviHub2.Data.Configurations
+namespace EviHub.Data.Configurations
 {
     public class ProposalConfig : IEntityTypeConfiguration<Proposal>
     {

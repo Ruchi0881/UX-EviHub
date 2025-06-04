@@ -1,4 +1,4 @@
-namespace EviHub2
+namespace EviHub
 {
     public class WeatherForecast
     {

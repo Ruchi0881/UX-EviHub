@@ -1,7 +1,7 @@
-﻿using EviHub2.Models.Entities;
-using EviHub2.Repositories;
+﻿using EviHub.Models.Entities;
+using EviHub.Repositories;
 
-namespace EviHub2.Services
+namespace EviHub.Services
 {
     public class CertificationService : ICertificationService
     {
