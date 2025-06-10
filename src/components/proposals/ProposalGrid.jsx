@@ -3,12 +3,12 @@ import Accordion from '../common/Accordion';
 
 const ProposalGrid = ({ proposals = [] }) => {
   const [visibleColumns, setVisibleColumns] = useState({
-    proposal: true,
-    description: true,
+    proposalName: true,
+    proposalDescription: true,
     theme: true,
     status: true,
     teams: true,
-    dateOfSubmission: false,
+    ProposalDate: false,
     submitter: false
   });
   const [showColumnSelector, setShowColumnSelector] = useState(false);
@@ -48,7 +48,7 @@ const ProposalGrid = ({ proposals = [] }) => {
   };
 
   return (
-    <div className="proposal-grid-container">
+    <div className="proposalName-grid-container">
       <div className="grid-header">
         <h3>All Proposals</h3>
         <div className="grid-controls">
@@ -66,8 +66,8 @@ const ProposalGrid = ({ proposals = [] }) => {
                 <label>
                   <input
                     type="checkbox"
-                    checked={visibleColumns.dateOfSubmission}
-                    onChange={() => toggleColumn('dateOfSubmission')}
+                    checked={visibleColumns.ProposalDate}
+                    onChange={() => toggleColumn('ProposalDate')}
                   />
                   Date of Submission
                 </label>
@@ -100,56 +100,56 @@ const ProposalGrid = ({ proposals = [] }) => {
           <table className="proposals-table">
             <thead>
               <tr>
-                {visibleColumns.proposal && <th>Proposal</th>}
-                {visibleColumns.description && <th>Description</th>}
+                {visibleColumns.proposalName && <th>proposalName</th>}
+                {visibleColumns.proposalDescription && <th>proposalDescription</th>}
                 {visibleColumns.theme && <th>Theme</th>}
                 {visibleColumns.status && <th>Status</th>}
                 {visibleColumns.teams && <th>Teams</th>}
-                {visibleColumns.dateOfSubmission && <th>Date of Submission</th>}
+                {visibleColumns.ProposalDate && <th>Date of Submission</th>}
                 {visibleColumns.submitter && <th>Submitter</th>}
               </tr>
             </thead>
             <tbody>
               {proposals.map((proposal) => (
-                <tr key={proposal.id} className="proposal-row">
-                  {visibleColumns.proposal && (
-                    <td className="proposal-name">
-                      <strong>{proposal.name}</strong>
+                <tr key={proposal.id} className="proposalName-row">
+                  {visibleColumns.proposalName && (
+                    <td className="proposalName-name">
+                      <strong>{proposal.proposalName}</strong>
                     </td>
                   )}
-                  {visibleColumns.description && (
-                    <td className="proposal-description">
-                      <div className="description-content" title={proposal.description}>
-                        {proposal.description.length > 100 
-                          ? `${proposal.description.substring(0, 100)}...` 
-                          : proposal.description}
+                  {visibleColumns.proposalDescription && (
+                    <td className="proposalName-proposalDescription">
+                      <div className="proposalDescription-content" title={proposal.proposalDescription}>
+                        {proposal.proposalDescription.length > 100 
+                          ? `${proposal.proposalDescription.substring(0, 100)}...` 
+                          : proposal.proposalDescription}
                       </div>
                     </td>
                   )}
                   {visibleColumns.theme && (
-                    <td className="proposal-theme">
+                    <td className="proposalName-theme">
                       <span className="theme-badge">{proposal.theme}</span>
                     </td>
                   )}
                   {visibleColumns.status && (
-                    <td className="proposal-status">
+                    <td className="proposalName-status">
                       <span className={`status-badge ${getStatusClass(proposal.status)}`}>
                         {proposal.status}
                       </span>
                     </td>
                   )}
                   {visibleColumns.teams && (
-                    <td className="proposal-teams">
+                    <td className="proposalName-teams">
                       {formatTeams(proposal.teams)}
                     </td>
                   )}
-                  {visibleColumns.dateOfSubmission && (
-                    <td className="proposal-date">
-                      {formatDate(proposal.dateOfSubmission)}
+                  {visibleColumns.ProposalDate && (
+                    <td className="proposalName-date">
+                      {formatDate(proposal.ProposalDate)}
                     </td>
                   )}
                   {visibleColumns.submitter && (
-                    <td className="proposal-submitter">
+                    <td className="proposalName-submitter">
                       {proposal.submitter}
                     </td>
                   )}

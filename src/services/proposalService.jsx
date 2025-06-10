@@ -46,8 +46,8 @@ const api = {
         const mockProposals = [
           {
             id: '1',
-            name: 'AI-Powered Customer Service',
-            description: 'Implement AI chatbots to improve customer service response times and accuracy.',
+            proposalName: 'AI-Powered Customer Service',
+            proposalDescription: 'Implement AI chatbots to improve customer service response times and accuracy.',
             theme: 'Technology',
             status: 'Approved',
             teams: ['Bhavana', 'Vaishnavi'],
@@ -56,8 +56,8 @@ const api = {
           },
           {
             id: '2',
-            name: 'Green Office Initiative',
-            description: 'Reduce office carbon footprint through sustainable practices and equipment.',
+            proposalName: 'Green Office Initiative',
+            proposalDescription: 'Reduce office carbon footprint through sustainable practices and equipment.',
             theme: 'Sustainability',
             status: 'In-Progress',
             teams: ['Bhanu', 'Sai'],
@@ -66,8 +66,8 @@ const api = {
           },
           {
             id: '3',
-            name: 'Remote Work Policy Enhancement',
-            description: 'Improve remote work policies to increase employee satisfaction and productivity.',
+            proposalName: 'Remote Work Policy Enhancement',
+            proposalDescription: 'Improve remote work policies to increase employee satisfaction and productivity.',
             theme: 'Sustainability',
             status: 'Pending',
             teams: [],

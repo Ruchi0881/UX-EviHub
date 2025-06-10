@@ -3,8 +3,8 @@ import Accordion from '../common/Accordion';
 
 const ProposalForm = ({ onSubmit, editingProposal = null, onCancel}) => {
   const [formData, setFormData] = useState({
-    name: '',
-    description: '',
+    proposalName: '',
+    proposalDescription: '',
     theme: ''
   });
   const [isEditing, setIsEditing] = useState(false);
@@ -13,8 +13,8 @@ const ProposalForm = ({ onSubmit, editingProposal = null, onCancel}) => {
     const handleEditProposal = (event) => {
       const proposal = event.detail;
       setFormData({
-        name: proposal.name,
-        description: proposal.description,
+        proposalName: proposal.proposalName,
+        proposalDescription: proposal.proposalDescription,
         theme: proposal.theme
       });
       setIsEditing(true);
@@ -29,8 +29,8 @@ const ProposalForm = ({ onSubmit, editingProposal = null, onCancel}) => {
   useEffect(()=>{
     if(editingProposal){
       setFormData({
-        name:editingProposal.name,
-        description:editingProposal.description,
+        proposalName:editingProposal.proposalName,
+        proposalDescription:editingProposal.proposalDescription,
         theme:editingProposal.theme
       });
       setIsEditing(true);
@@ -49,7 +49,7 @@ const ProposalForm = ({ onSubmit, editingProposal = null, onCancel}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.description.trim() || !formData.theme.trim()) {
+    if (!formData.proposalName.trim() || !formData.proposalDescription.trim() || !formData.theme.trim()) {
       alert('Please fill in all fields');
       return;
     }
@@ -58,8 +58,8 @@ const ProposalForm = ({ onSubmit, editingProposal = null, onCancel}) => {
     
     // Reset form after submission
     setFormData({
-      name: '',
-      description: '',
+      proposalName: '',
+      proposalDescription: '',
       theme: ''
     });
     setIsEditing(false);
@@ -67,8 +67,8 @@ const ProposalForm = ({ onSubmit, editingProposal = null, onCancel}) => {
 
   const handleCancel = () => {
     setFormData({
-      name: '',
-      description: '',
+      proposalName: '',
+      proposalDescription: '',
       theme: ''
     });
     setIsEditing(false);
@@ -81,26 +81,26 @@ const ProposalForm = ({ onSubmit, editingProposal = null, onCancel}) => {
     <div className="proposal-form-container">
       <form onSubmit={handleSubmit} className="proposal-form">
         <div className="form-group">
-          <label htmlFor="name">Proposal Name *</label>
+          <label htmlFor="proposalName">Proposal Name *</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
+            id="proposalName"
+            name="proposalName"
+            value={formData.proposalName}
             onChange={handleInputChange}
-            placeholder="Enter proposal name"
+            placeholder="Enter proposal Name"
             required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="description">Proposal Description *</label>
+          <label htmlFor="proposalDescription">Proposal Description *</label>
           <textarea
-            id="description"
-            name="description"
-            value={formData.description}
+            id="proposalDescription"
+            name="proposalDescription"
+            value={formData.proposalDescription}
             onChange={handleInputChange}
-            placeholder="Enter detailed description of your proposal"
+            placeholder="Enter detailed Description of your proposal"
             rows="4"
             required
           />
