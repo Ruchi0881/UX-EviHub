@@ -359,27 +359,6 @@
   },
   {
     "ContainingType": "EviHub.Controllers.AdminController",
-    "Method": "UpdateSkill",
-    "RelativePath": "api/Admin/skills/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "EviHub.DTOs.SkillDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EviHub.Controllers.AdminController",
     "Method": "DeleteSkill",
     "RelativePath": "api/Admin/skills/{id}",
     "HttpMethod": "DELETE",
@@ -1071,27 +1050,6 @@
   },
   {
     "ContainingType": "EviHub.Controllers.SkillsController",
-    "Method": "UpdateSkill",
-    "RelativePath": "Skills/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "EviHub.DTOs.SkillDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EviHub.Controllers.SkillsController",
     "Method": "DeleteSkill",
     "RelativePath": "Skills/{id}",
     "HttpMethod": "DELETE",
@@ -1100,6 +1058,38 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EviHub.Controllers.SkillsController",
+    "Method": "UpdateEmployeeSkills",
+    "RelativePath": "Skills/employee",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EviHub.DTOs.UpdateEmployeeSkillsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EviHub.Controllers.SkillsController",
+    "Method": "GetSkillsByEmpId",
+    "RelativePath": "Skills/employee/{empId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "empId",
         "Type": "System.Int32",
         "IsRequired": true
       }

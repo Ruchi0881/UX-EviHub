@@ -1,7 +1,4 @@
 ﻿using EviHub.DTOs;
-using EviHub.EviHub.Core.Entities.MasterData;
-
-using EviHub.Services;
 using EviHub.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,11 +17,19 @@ namespace EviHub.Controllers
             _service = service;
         }
 
-        // GET: api/Skill(Get All Skills)
+        //GET
         [HttpGet("GetAllSkills")]
         public async Task<IActionResult> GetAllSkills()
         {
             var skills = await _service.GetAllSkillsAsync();
+            return Ok(skills);
+        }
+
+        // GET: api/Skill(Get All Skills)
+        [HttpGet("employee/{empId}")]
+        public async Task<IActionResult> GetSkillsByEmpId(int empId)
+        {
+            var skills = await _service.GetSkillsByEmpIdAsync(empId);
             return Ok(skills);
         }
 
@@ -33,18 +38,22 @@ namespace EviHub.Controllers
         public async Task<IActionResult> AddSkill([FromBody] SkillDTO dto)
         {
             var createdSkill = await _service.AddSkillAsync(dto);
-            return CreatedAtAction(nameof(GetAllSkills), new { id = createdSkill.SkillId }, createdSkill);
+            return Ok(createdSkill);
         }
 
         // PUT: api/Skill/{id} (Update Skill)
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateSkill(int id, [FromBody] SkillDTO dto)
+        [HttpPut("employee")]
+        public async Task<IActionResult> UpdateEmployeeSkills([FromBody] UpdateEmployeeSkillsDTO dto)
         {
-            var updatedSkill = await _service.UpdateSkillAsync(id,dto);
-            if (updatedSkill == null)
-                return NotFound();
-
-            return Ok(updatedSkill);
+            try
+            {
+                await _service.UpdateEmployeeSkillsAsync(dto);
+                return Ok("Skills updated successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // GET :api/Skill/{id} (GetSkillById)

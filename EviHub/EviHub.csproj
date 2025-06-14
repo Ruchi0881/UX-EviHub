@@ -21,4 +21,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Dhanasri.Ruchira\Source\Repos\Evihub-2\EviHub\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Dhanasri.Ruchira\Source\Repos\Evihub-2\EviHub\.editorconfig" />
+  </ItemGroup>
+
 </Project>

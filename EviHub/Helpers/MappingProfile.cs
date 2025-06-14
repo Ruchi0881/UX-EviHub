@@ -34,8 +34,13 @@ namespace Evihub.Helpers
             CreateMap<Manager, ManagerDTO>().ReverseMap();
             CreateMap<Project, ProjectDTO>().ReverseMap();
             CreateMap<Skills, SkillDTO>().ReverseMap();
+            CreateMap<EmployeeSkills, EmployeeSkillsDTO>()
+            .ForMember(dest => dest.SkillId, opt => opt.MapFrom(src => src.SkillId))
+            .ForMember(dest => dest.EmpId, opt => opt.MapFrom(src => src.EmpId));
+        
 
 
-        }
+    }
+
     }
 }

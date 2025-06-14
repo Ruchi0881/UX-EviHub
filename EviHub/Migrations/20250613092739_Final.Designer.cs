@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EviHub.Migrations
 {
     [DbContext(typeof(EviHubDbContext))]
-    [Migration("20250610094809_Final")]
+    [Migration("20250613092739_Final")]
     partial class Final
     {
         /// <inheritdoc />

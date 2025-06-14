@@ -539,46 +539,6 @@
           }
         }
       },
-      "put": {
-        "tags": [
-          "Admin"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SkillDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SkillDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SkillDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "delete": {
         "tags": [
           "Admin"
@@ -1674,6 +1634,29 @@
         }
       }
     },
+    "/Skills/employee/{empId}": {
+      "get": {
+        "tags": [
+          "Skills"
+        ],
+        "parameters": [
+          {
+            "name": "empId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Skills": {
       "post": {
         "tags": [
@@ -1705,37 +1688,26 @@
         }
       }
     },
-    "/Skills/{id}": {
+    "/Skills/employee": {
       "put": {
         "tags": [
           "Skills"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SkillDTO"
+                "$ref": "#/components/schemas/UpdateEmployeeSkillsDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SkillDTO"
+                "$ref": "#/components/schemas/UpdateEmployeeSkillsDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SkillDTO"
+                "$ref": "#/components/schemas/UpdateEmployeeSkillsDTO"
               }
             }
           }
@@ -1745,8 +1717,10 @@
             "description": "OK"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/Skills/skills/{id}": {
+      "get": {
         "tags": [
           "Skills"
         ],
@@ -1768,8 +1742,8 @@
         }
       }
     },
-    "/Skills/skills/{id}": {
-      "get": {
+    "/Skills/{id}": {
+      "delete": {
         "tags": [
           "Skills"
         ],
@@ -2164,6 +2138,24 @@
           },
           "comments": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateEmployeeSkillsDTO": {
+        "type": "object",
+        "properties": {
+          "empId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skillIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
             "nullable": true
           }
         },

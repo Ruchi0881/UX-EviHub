@@ -6,9 +6,10 @@ namespace EviHub.Services.Interfaces
 {
     public interface ISkillService
     {
-        Task<IEnumerable<SkillDTO>>GetAllSkillsAsync();
+        Task<List<EmployeeSkillsDTO>> GetSkillsByEmpIdAsync(int empId);
+        Task<IEnumerable<SkillDTO>> GetAllSkillsAsync();
         Task<SkillDTO> AddSkillAsync(SkillDTO dto);
-        Task<SkillDTO> UpdateSkillAsync(int id, SkillDTO dto);
+        Task <UpdateEmployeeSkillsDTO>UpdateEmployeeSkillsAsync(UpdateEmployeeSkillsDTO dto);
         Task<SkillDTO?> GetSkillByIdAsync(int id);
         Task<bool> DeleteSkillAsync(int id);
        
