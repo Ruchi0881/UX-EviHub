@@ -1,4 +1,8 @@
-.vs
-bin
-obj
-Debug
+#Ignore system and IDE files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.vsidx
+*.log
