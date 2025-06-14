@@ -29,9 +29,10 @@ namespace EviHub.Services.Interfaces
         Task<bool> DeleteProjectAsync(int id);
 
         // Skill operations
+        Task<List<EmployeeSkillsDTO>> GetSkillsByEmpIdAsync(int empId);
         Task<IEnumerable<SkillDTO>> GetAllSkillsAsync();
-        Task<SkillDTO> AddSkillAsync(SkillDTO skillDto);
-        Task<SkillDTO> UpdateSkillAsync(int id, SkillDTO skillDto);
+        Task<SkillDTO> AddSkillAsync(SkillDTO dto);
+        Task<UpdateEmployeeSkillsDTO> UpdateEmployeeSkillsAsync(UpdateEmployeeSkillsDTO dto);
         Task<SkillDTO?> GetSkillByIdAsync(int id);
         Task<bool> DeleteSkillAsync(int id);
 

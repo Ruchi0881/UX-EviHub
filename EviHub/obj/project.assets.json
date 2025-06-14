@@ -5188,25 +5188,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\venkata.Saiteja\\.nuget\\packages\\": {},
+    "C:\\Users\\Dhanasri.Ruchira\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\venkata.Saiteja\\source\\repos\\EviHub\\EviHub\\EviHub.csproj",
+      "projectUniqueName": "C:\\Users\\Dhanasri.Ruchira\\Source\\Repos\\Evihub-2\\EviHub\\EviHub.csproj",
       "projectName": "EviHub",
-      "projectPath": "C:\\Users\\venkata.Saiteja\\source\\repos\\EviHub\\EviHub\\EviHub.csproj",
-      "packagesPath": "C:\\Users\\venkata.Saiteja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\venkata.Saiteja\\source\\repos\\EviHub\\EviHub\\obj\\",
+      "projectPath": "C:\\Users\\Dhanasri.Ruchira\\Source\\Repos\\Evihub-2\\EviHub\\EviHub.csproj",
+      "packagesPath": "C:\\Users\\Dhanasri.Ruchira\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dhanasri.Ruchira\\Source\\Repos\\Evihub-2\\EviHub\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\venkata.Saiteja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dhanasri.Ruchira\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

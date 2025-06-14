@@ -271,13 +271,13 @@ namespace EviHub.Controllers
             return Ok($"Skill added successfully");
         }
 
-        // PUT: api/Skill/{id} (Update Skill)
-        [HttpPut("skills/{id}")]
-        public async Task<IActionResult> UpdateSkill(int id, SkillDTO dto)
-        {
-            var result = await _adminService.UpdateSkillAsync(id, dto);
-            return Ok($"Skill with ID {id} Updated successfully");
-        }
+        //// PUT: api/Skill/{id} (Update Skill)
+        //[HttpPut("skills/{id}")]
+        //public async Task<IActionResult> UpdateSkill(int id, SkillDTO dto)
+        //{
+        //    var result = await _adminService.UpdateSkillAsync(id, dto);
+        //    return Ok($"Skill with ID {id} Updated successfully");
+        //}
 
         // DELETE: api/Skill/{id}(Delete Skills)
         [HttpDelete("skills/{id}")]

@@ -132,14 +132,20 @@ namespace EviHub.Services
             return await _skillService.AddSkillAsync(skillDto);
         }
 
-        public async Task<SkillDTO> UpdateSkillAsync(int id, SkillDTO skillDto)
-        {
-            return await _skillService.UpdateSkillAsync(id, skillDto);
-        }
+        
 
         public async Task<bool> DeleteSkillAsync(int id)
         {
             return await _skillService.DeleteSkillAsync(id);
+        }
+        public async Task<List<EmployeeSkillsDTO>> GetSkillsByEmpIdAsync(int empId)
+        {
+            return await _skillService.GetSkillsByEmpIdAsync(empId);
+        }
+
+        public async Task<UpdateEmployeeSkillsDTO> UpdateEmployeeSkillsAsync(UpdateEmployeeSkillsDTO dto)
+        {
+            return await _skillService.UpdateEmployeeSkillsAsync(dto);
         }
 
         //// === Certification operations ===
@@ -193,7 +199,5 @@ namespace EviHub.Services
         {
             return await _designationService.DeleteDesignationAsync(id);
         }
-
-       
     }
 }

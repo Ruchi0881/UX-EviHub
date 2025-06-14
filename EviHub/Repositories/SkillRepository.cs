@@ -3,6 +3,8 @@ using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Repositories.Interfaces;
 using Evihub.Data;
 using Microsoft.EntityFrameworkCore;
+using EviHub.Models.Entities;
+using EviHub.DTOs;
 
 namespace EviHub.Repositories
 {
@@ -14,6 +16,13 @@ namespace EviHub.Repositories
         {
             _context = context;
         }
+        public async Task<List<EmployeeSkills>> GetSkillsByEmpIdAsync(int empId)
+        {
+            return await _context.EmployeeSkills
+                .Include(es => es.Skills)
+                .Where(es => es.EmpId == empId)
+                .ToListAsync();
+        }
         public async Task<IEnumerable<Skills>> GetAllSkillsAsync()
         {
             return await _context.Skills.ToListAsync();
@@ -24,12 +33,40 @@ namespace EviHub.Repositories
             await _context.SaveChangesAsync();
             return skill;
         }
-        public async Task<Skills> UpdateSkillAsync(int id,Skills skill)
+
+        public async Task UpdateEmployeeSkillsAsync(int empId, List<int> skillIds)
         {
-            _context.Skills.Update(skill);
-            await _context.SaveChangesAsync();
-            return skill;
+            try
+            {
+                // Remove old skills
+                var existing = await _context.EmployeeSkills
+                    .Where(es => es.EmpId == empId)
+                    .ToListAsync();
+
+                _context.EmployeeSkills.RemoveRange(existing);
+
+                // Add new skills
+                var newSkills = skillIds.Select(skillId => new EmployeeSkills
+                {
+                    EmpId = empId,
+                    SkillId = skillId
+                });
+
+                await _context.EmployeeSkills.AddRangeAsync(newSkills);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
+
+
+
+
+
+
         public async Task<Skills?> GetSkillByIdAsync(int id)
         {
             return await _context.Skills
