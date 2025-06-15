@@ -1,4 +1,5 @@
 #Ignore system and IDE files
+.github
 .vs/
 bin/
 obj/
