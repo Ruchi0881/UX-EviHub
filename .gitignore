@@ -1,8 +1,57 @@
-#Ignore system and IDE files
-.vs/
+# .gitignore for both .NET (Service) and React (UI) projects
+
+# --- .NET (Service) ---
+# Build results
 bin/
 obj/
+
+# User-specific files
 *.user
 *.suo
 *.vsidx
 *.log
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+*.sln.iml
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Dotnet publish
+publish/
+
+# Entity Framework Migrations
+Migrations/
+
+# --- React (UI) ---
+# Node modules
+UI/node_modules/
+
+# Build output
+UI/dist/
+
+# Log files
+UI/npm-debug.log*
+UI/yarn-debug.log*
+UI/yarn-error.log*
+UI/pnpm-debug.log*
+
+# Local env files
+UI/.env*
+
+# Vite cache
+UI/.vite/
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Editor directories and files
+UI/.vscode/
+UI/.idea/
