@@ -48,9 +48,9 @@ namespace Evihub.Services
             await _repo.DeleteAsync(id);
 
 
-        public async Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id) =>
+        //public async Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id) =>
 
-            await _repo.GetCertificationsByCategoryId(id);
+        //    await _repo.GetCertificationsByCategoryId(id);
         
         
     }
