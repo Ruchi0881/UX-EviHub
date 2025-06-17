@@ -37,10 +37,16 @@ namespace Evihub.Helpers
             CreateMap<EmployeeSkills, EmployeeSkillsDTO>()
             .ForMember(dest => dest.SkillId, opt => opt.MapFrom(src => src.SkillId))
             .ForMember(dest => dest.EmpId, opt => opt.MapFrom(src => src.EmpId));
-        
+            CreateMap<Login, LoginResponseDTO>()
+            .ForMember(dest => dest.EmpId, opt => opt.MapFrom(src => src.Employee.EmpId))
+            .ForMember(dest => dest.Role, opt => opt.MapFrom(src =>
+                src.Employee.IsAdmin == true ? "Admin" :
+                src.Employee.ManagerId != null ? "Manager" : "Employee"));
+            CreateMap<SignupRequestDTO, Employee>();
 
 
-    }
+
+        }
 
     }
 }

@@ -16,7 +16,7 @@ namespace EviHub.Data.Configurations
             builder.Property(e => e.Email).IsRequired().HasMaxLength(200);
             builder.Property(e => e.Mobile).IsRequired().HasMaxLength(15);
             builder.Property(e => e.Interests).HasMaxLength(500);
-            builder.Property(e => e.EmergencyContact).IsRequired().HasMaxLength(15);
+            //builder.Property(e => e.EmergencyContact).IsRequired().HasMaxLength(15);
             builder.Property(e => e.IsAdmin).HasDefaultValue(false);
 
             //builder.HasOne(e=>e.Designation)

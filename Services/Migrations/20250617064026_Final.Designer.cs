@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EviHub.Migrations
 {
     [DbContext(typeof(EviHubDbContext))]
-    [Migration("20250613092739_Final")]
+    [Migration("20250617064026_Final")]
     partial class Final
     {
         /// <inheritdoc />
@@ -157,6 +157,9 @@ namespace EviHub.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("CertificationCategoryCategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("CertificationName")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -167,7 +170,7 @@ namespace EviHub.Migrations
 
                     b.HasKey("CertificationId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CertificationCategoryCategoryId");
 
                     b.ToTable("Certifications");
                 });
@@ -207,15 +210,12 @@ namespace EviHub.Migrations
                     b.Property<int>("EmpId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("completionDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("CertificationProgressId");
 
@@ -243,16 +243,14 @@ namespace EviHub.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("EmergencyContact")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("GenderId")
+                    b.Property<int?>("GenderId")
                         .HasColumnType("int");
 
                     b.Property<int>("Id")
@@ -262,7 +260,6 @@ namespace EviHub.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Interests")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -352,6 +349,33 @@ namespace EviHub.Migrations
                     b.ToTable("EmployeeSkills");
                 });
 
+            modelBuilder.Entity("EviHub.Models.Entities.Login", b =>
+                {
+                    b.Property<int>("LoginId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoginId"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Email");
+
+                    b.Property<int>("EmpId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LoginId");
+
+                    b.HasIndex("EmpId");
+
+                    b.ToTable("Logins");
+                });
+
             modelBuilder.Entity("EviHub.Models.Entities.Proposal", b =>
                 {
                     b.Property<int>("ProposalId")
@@ -417,13 +441,9 @@ namespace EviHub.Migrations
 
             modelBuilder.Entity("EviHub.Models.Entities.Certification", b =>
                 {
-                    b.HasOne("EviHub.Models.Entities.CertificationCategory", "CertificationCategory")
+                    b.HasOne("EviHub.Models.Entities.CertificationCategory", null)
                         .WithMany("Certifications")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CertificationCategory");
+                        .HasForeignKey("CertificationCategoryCategoryId");
                 });
 
             modelBuilder.Entity("EviHub.Models.Entities.Certificationprogress", b =>
@@ -455,9 +475,7 @@ namespace EviHub.Migrations
 
                     b.HasOne("EviHub.EviHub.Core.Entities.MasterData.Gender", "Gender")
                         .WithMany("Employees")
-                        .HasForeignKey("GenderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GenderId");
 
                     b.HasOne("EviHub.EviHub.Core.Entities.MasterData.Manager", "Manager")
                         .WithMany("EmployeesUnderManager")
@@ -512,6 +530,17 @@ namespace EviHub.Migrations
                     b.Navigation("Employee");
 
                     b.Navigation("Skills");
+                });
+
+            modelBuilder.Entity("EviHub.Models.Entities.Login", b =>
+                {
+                    b.HasOne("EviHub.Models.Entities.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmpId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("EviHub.Models.Entities.Proposal", b =>

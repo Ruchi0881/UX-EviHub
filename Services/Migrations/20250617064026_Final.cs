@@ -103,17 +103,17 @@ namespace EviHub.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CertificationName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CertificationCategoryCategoryId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Certifications", x => x.CertificationId);
                     table.ForeignKey(
-                        name: "FK_Certifications_CertificationCategories_CategoryId",
-                        column: x => x.CategoryId,
+                        name: "FK_Certifications_CertificationCategories_CertificationCategoryCategoryId",
+                        column: x => x.CertificationCategoryCategoryId,
                         principalTable: "CertificationCategories",
-                        principalColumn: "CategoryId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CategoryId");
                 });
 
             migrationBuilder.CreateTable(
@@ -128,12 +128,12 @@ namespace EviHub.Migrations
                     Email = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Mobile = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     DOB = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Interests = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Interests = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     DesignationId = table.Column<int>(type: "int", nullable: false),
                     ManagerId = table.Column<int>(type: "int", nullable: true),
                     ProjectId = table.Column<int>(type: "int", nullable: true),
-                    GenderId = table.Column<int>(type: "int", nullable: false),
-                    EmergencyContact = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    GenderId = table.Column<int>(type: "int", nullable: true),
+                    EmergencyContact = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsAdmin = table.Column<bool>(type: "bit", nullable: true, defaultValue: false)
                 },
                 constraints: table =>
@@ -149,8 +149,7 @@ namespace EviHub.Migrations
                         name: "FK_Employees_Genders_GenderId",
                         column: x => x.GenderId,
                         principalTable: "Genders",
-                        principalColumn: "GenderId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "GenderId");
                     table.ForeignKey(
                         name: "FK_Employees_Managers_ManagerId",
                         column: x => x.ManagerId,
@@ -171,8 +170,7 @@ namespace EviHub.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CertificationId = table.Column<int>(type: "int", nullable: false),
                     EmpId = table.Column<int>(type: "int", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    completionDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Comments = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -248,6 +246,27 @@ namespace EviHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Logins",
+                columns: table => new
+                {
+                    LoginId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmpId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Logins", x => x.LoginId);
+                    table.ForeignKey(
+                        name: "FK_Logins_Employees_EmpId",
+                        column: x => x.EmpId,
+                        principalTable: "Employees",
+                        principalColumn: "EmpId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Proposals",
                 columns: table => new
                 {
@@ -309,9 +328,9 @@ namespace EviHub.Migrations
                 column: "EmpId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Certifications_CategoryId",
+                name: "IX_Certifications_CertificationCategoryCategoryId",
                 table: "Certifications",
-                column: "CategoryId");
+                column: "CertificationCategoryCategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Designations_DesignationName",
@@ -360,6 +379,11 @@ namespace EviHub.Migrations
                 column: "SkillId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Logins_EmpId",
+                table: "Logins",
+                column: "EmpId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Projects_ProjectName",
                 table: "Projects",
                 column: "ProjectName",
@@ -398,6 +422,9 @@ namespace EviHub.Migrations
 
             migrationBuilder.DropTable(
                 name: "EmployeeSkills");
+
+            migrationBuilder.DropTable(
+                name: "Logins");
 
             migrationBuilder.DropTable(
                 name: "ProposalWorks");

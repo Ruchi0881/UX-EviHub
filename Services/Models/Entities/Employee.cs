@@ -15,13 +15,13 @@ namespace EviHub.Models.Entities
         public string FirstName { get; set; }
         public  string LastName { get; set; }
         public  string Email { get; set; }
-        public string Mobile { get; set; }
+        public string? Mobile { get; set; }
         public DateTime DOB { get; set; }
-        public string Interests { get; set; }
+        public string? Interests { get; set; }
         public int DesignationId { get; set; }//FK
         public int? ManagerId { get; set; }//FK
         public int? ProjectId { get; set; }//FK
-        public int   GenderId { get; set; }//FK
+        public int?   GenderId { get; set; }//FK
         //public int  SkillId { get; set; }//FK
         //public int RoleId { get; set; }//FK
         //public int UserId { get; set; }//FK
@@ -29,7 +29,7 @@ namespace EviHub.Models.Entities
 
        // public int ProposalWorkId { get; set; }//FK
         //public int CertificationProgressId { get; set; }//FK
-        public string EmergencyContact { get; set; }
+        public string? EmergencyContact { get; set; }
         public bool? IsAdmin { get; set; }
         
         

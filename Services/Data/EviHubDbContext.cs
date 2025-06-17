@@ -29,6 +29,7 @@ namespace Evihub.Data
 
         //}
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Login> Logins { get; set; }
         public DbSet<Proposal> Proposals { get; set; }
         public DbSet<ProposalWork> ProposalWorks { get; set; }
         public DbSet<Certification> Certifications { get; set; }
