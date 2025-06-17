@@ -7,7 +7,7 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
-    username: '',
+    Email: '',
     password: '',
     rememberMe: false
   });
@@ -23,7 +23,7 @@ const Login = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!credentials.username) newErrors.username = 'Username is required';
+    if (!credentials.Email) newErrors.Email = 'Email is required';
     if (!credentials.password) newErrors.password = 'Password is required';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -34,7 +34,7 @@ const Login = () => {
     if (!validate()) return;
 
     const result = await login({
-      username: credentials.username,
+      Email: credentials.Email,
       password: credentials.password
     });
 
@@ -51,15 +51,17 @@ const Login = () => {
         
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Username</label>
+            <label>Email</label>
+
+            {/* Input name stays as Email for state mapping */}
             <input
-              type="text"
-              name="username"
-              value={credentials.username}
-              onChange={handleChange}
-              className={errors.username ? 'error' : ''}
+            type="text"
+            name="Email"
+            value={credentials.Email}
+            onChange={handleChange}
+            className={errors.Email ? 'error' : ''}
             />
-            {errors.username && <span className="error-text">{errors.username}</span>}
+            {errors.Email && <span className="error-text">{errors.Email}</span>}
           </div>
 
           <div className="form-group">

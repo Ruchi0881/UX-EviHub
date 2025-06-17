@@ -1,251 +1,161 @@
-import React, { useState,useEffect } from 'react';
+
+
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/auth.css';
 
 const SignUp = () => {
-  const { signup } = useAuth();
-  const navigate = useNavigate();
-  const [isManager, setIsManager] = useState(false);
-  const [managers, setManagers] = useState([]);
-  const [designations, setDesignations] = useState([]);
-  const [formData, setFormData] = useState({
-    employeeid:'',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    dob: '',
-    isManager: false,
-    managerId: '',
-    designation: '',
-    username: '',
-    password: '',
-    confirmPassword: ''
-  });
-  const [errors, setErrors] = useState({});
+const { signup } = useAuth();
+const navigate = useNavigate();
 
-  // In a real app, these would come from an API
-  useEffect(() => {
-    // Mock data - replace with API call
-    setManagers([
-      { id: '1', name: 'Krishnakanth Erukulla(KK)' },
-      { id: '2', name: 'Santoshi Bondalapa' }
-    ]);
-    setDesignations(['Developer', 'Designer', 'QA', 'Product Manager']);
-  }, []);
+const [formData, setFormData] = useState({
+empId: '',
+firstName: '',
+lastName: '',
+email: '',
+mobile: '',
+dob: '',
+designationId: '',
+managerId: '',
+password: '',
+confirmPassword: ''
+});
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-  };
+const [errors, setErrors] = useState({});
+const [designations, setDesignations] = useState([]);
+const [managers, setManagers] = useState([]);
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.employeeid) newErrors.firstName = 'Employee Id is required';
-    if (!formData.firstName) newErrors.firstName = 'First name is required';
-    if (!formData.lastName) newErrors.lastName = 'Last name is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    if (!formData.phone) newErrors.phone = 'Phone number is required';
-    if (!formData.dob) newErrors.dob = 'Date of birth is required';
-    if (!formData.isManager && !formData.managerId) newErrors.managerId = 'Manager is required';
-    if (!formData.designation) newErrors.designation = 'Designation is required';
-    if (!formData.username) newErrors.username = 'Username is required';
-    if (!formData.password) newErrors.password = 'Password is required';
-    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+useEffect(() => {
+// Fetch these from your backend if available
+// setManagers([
+// { id: 1, name: 'Manager A' },
+// { id: 2, name: 'Manager B' }
+// ]);
+setDesignations([
+{ id: 1, name: 'Developer' },
+{ id: 2, name: 'QA' },
+{ id: 3, name: 'Designer' }
+]);
+ const fetchManagers = async () => {
+try {
+const response = await fetch('https://localhost:7218/api/Admin/managers'); // Your backend URL
+if (!response.ok) throw new Error('Failed to fetch managers');
+const data = await response.json();
+// Map data to match {id, name} structure expected by dropdown
+const formattedManagers = data.map(m => ({
+id: m.managerId,
+name: `${m.firstName} ${m.lastName}`
+}));
+setManagers(formattedManagers);
+} catch (error) {
+console.error('Error fetching managers:', error);
+setManagers([]); // fallback to empty list on error
+}
+};
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validate()) return;
+const fetchDesignations = async () => {
+try {
+const response = await fetch('https://localhost:7218/api/Admin/designations'); // Replace with your API URL
+if (!response.ok) throw new Error('Failed to fetch designations');
+const data = await response.json();
+const formattedDesignations = data.map(d => ({
+id: d.designationId, // backend property for designation ID
+name: d.designationName // display name from backend
+}));
+setDesignations(formattedDesignations);
+} catch (error) {
+console.error('Error fetching designations:', error);
+setDesignations([]); // fallback
+}
+};
 
-    const result = await signup({
-      ...formData,
-      role: formData.isManager ? 'manager' : 'employee'
-    });
+fetchManagers();
+fetchDesignations();
 
-    if (result.success) {
-      navigate('/login');
-    } else {
-      setErrors({ ...errors, form: result.message });
-    }
-  };
+}, []);
 
-  return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <h2>Create Your Account</h2>
-        {errors.form && <div className="error-message">{errors.form}</div>}
-        
-        <form onSubmit={handleSubmit}>
-        <div className="form-group">
-            <label>Employee Id</label>
-            <input
-              type="text"
-              name="employeeid"
-              value={formData.employeeid}
-              onChange={handleChange}
-              className={errors.employeeid ? 'error' : ''}
-            />
-            {errors.employeeid && <span className="error-text">{errors.employeeid}</span>}
-          </div>
+const handleChange = (e) => {
+const { name, value } = e.target;
+setFormData(prev => ({ ...prev, [name]: value }));
+};
 
-          <div className="form-group">
-            <label>First Name</label>
-            <input
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              className={errors.firstName ? 'error' : ''}
-            />
-            {errors.firstName && <span className="error-text">{errors.firstName}</span>}
-          </div>
+const validate = () => {
+const newErrors = {};
+Object.entries(formData).forEach(([key, value]) => {
+if (!value && key !== 'managerId') newErrors[key] = `${key} is required`;
+});
+if (formData.password !== formData.confirmPassword)
+newErrors.confirmPassword = 'Passwords do not match';
+setErrors(newErrors);
+return Object.keys(newErrors).length === 0;
+};
 
-          <div className="form-group">
-            <label>Last Name</label>
-            <input
-              type="text"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              className={errors.lastName ? 'error' : ''}
-            />
-            {errors.lastName && <span className="error-text">{errors.lastName}</span>}
-          </div>
+const handleSubmit = async (e) => {
+e.preventDefault();
+if (!validate()) return;
+const data = { ...formData };
+delete data.confirmPassword;
+data.empId = parseInt(data.empId);
+data.designationId = parseInt(data.designationId);
+data.managerId = parseInt(data.managerId);
 
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className={errors.email ? 'error' : ''}
-            />
-            {errors.email && <span className="error-text">{errors.email}</span>}
-          </div>
+const result = await signup(data);
+if (result.success) navigate('/login');
+else setErrors({ form: result.message });
+};
 
-          <div className="form-group">
-            <label>Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className={errors.phone ? 'error' : ''}
-            />
-            {errors.phone && <span className="error-text">{errors.phone}</span>}
-          </div>
+return (
+<div className="auth-container">
+<div className="auth-card">
+<h2>Create Account</h2>
+{errors.form && <div className="error-message">{errors.form}</div>}
+<form onSubmit={handleSubmit}>
+{['empId', 'firstName', 'lastName', 'email', 'mobile', 'dob'].map(field => (
+<div className="form-group" key={field}>
+<label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+<input type={field === 'dob' ? 'date' : 'text'} name={field} value={formData[field]} onChange={handleChange} className={errors[field] ? 'error' : ''} />
+{errors[field] && <span className="error-text">{errors[field]}</span>}
+</div>
+))}
 
-          <div className="form-group">
-            <label>Date of Birth</label>
-            <input
-              type="date"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              className={errors.dob ? 'error' : ''}
-            />
-            {errors.dob && <span className="error-text">{errors.dob}</span>}
-          </div>
+<div className="form-group">
+<label>Designation</label>
+<select name="designationId" value={formData.designationId} onChange={handleChange}>
+<option value="">Select Designation</option>
+{designations.map(d => (
+<option key={d.id} value={d.id}>{d.name}</option>
+))}
+</select>
+{errors.designationId && <span className="error-text">{errors.designationId}</span>}
+</div>
 
-          <div className=" checkbox-group">
-            <input
-              type="checkbox"
-              id="isManager"
-              name="isManager"
-              checked={formData.isManager}
-              onChange={handleChange}
-            />
-            <label htmlFor="isManager">Are you a manager?</label>
-          </div>
+<div className="form-group">
+<label>Manager</label>
+<select name="managerId" value={formData.managerId} onChange={handleChange}>
+<option value="">Select Manager</option>
+{managers.map(m => (
+<option key={m.id} value={m.id}>{m.name}</option>
+))}
+</select>
+</div>
 
-          {!formData.isManager && (
-            <div className="form-group">
-              <label>Manager</label>
-              <select
-                name="managerId"
-                value={formData.managerId}
-                onChange={handleChange}
-                className={errors.managerId ? 'error' : ''}
-              >
-                <option value="">Select Manager</option>
-                {managers.map(manager => (
-                  <option key={manager.id} value={manager.id}>{manager.name}</option>
-                ))}
-              </select>
-              {errors.managerId && <span className="error-text">{errors.managerId}</span>}
-            </div>
-          )}
+{['password', 'confirmPassword'].map(field => (
+<div className="form-group" key={field}>
+<label>{field === 'password' ? 'Password' : 'Confirm Password'}</label>
+<input type="password" name={field} value={formData[field]} onChange={handleChange} className={errors[field] ? 'error' : ''} />
+{errors[field] && <span className="error-text">{errors[field]}</span>}
+</div>
+))}
 
-          <div className="form-group">
-            <label>Designation</label>
-            <select
-              name="designation"
-              value={formData.designation}
-              onChange={handleChange}
-              className={errors.designation ? 'error' : ''}
-            >
-              <option value="">Select Designation</option>
-              {designations.map(designation => (
-                <option key={designation} value={designation}>{designation}</option>
-              ))}
-            </select>
-            {errors.designation && <span className="error-text">{errors.designation}</span>}
-          </div>
-
-          <div className="form-group">
-            <label>Username</label>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              className={errors.username ? 'error' : ''}
-            />
-            {errors.username && <span className="error-text">{errors.username}</span>}
-          </div>
-
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className={errors.password ? 'error' : ''}
-            />
-            {errors.password && <span className="error-text">{errors.password}</span>}
-          </div>
-
-          <div className="form-group">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className={errors.confirmPassword ? 'error' : ''}
-            />
-            {errors.confirmPassword && <span className="error-text">{errors.confirmPassword}</span>}
-          </div>
-
-          <button type="submit" className="auth-button">Sign Up</button>
-        </form>
-
-        <div className="auth-footer">
-          Already have an account? <Link to="/login">Login</Link>
-        </div>
-      </div>
-    </div>
-  );
+<button type="submit" className="auth-button">Sign Up</button>
+</form>
+<div className="auth-footer">
+Already have an account? <Link to="/login">Login</Link>
+</div>
+</div>
+</div>
+);
 };
 
 export default SignUp;
