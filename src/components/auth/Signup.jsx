@@ -30,7 +30,7 @@ const SignUp = () => {
     // Mock data - replace with API call
     setManagers([
       { id: '1', name: 'Krishnakanth Erukulla(KK)' },
-      { id: '2', name: 'Santoshi Bondalapa' }
+      { id: '2', name: 'Santoshi Bondalapati' }
     ]);
     setDesignations(['Developer', 'Designer', 'QA', 'Product Manager']);
   }, []);

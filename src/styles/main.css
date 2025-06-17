@@ -871,6 +871,85 @@ textarea[name="proposals"] {
   .certifications-grid {
     overflow-x: auto;
   }
+
+
+  /* .cert-dropdown-container {
+  position: relative;
+} */
+
+.cert-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center; /* Aligns input and button vertically */
+  width: 100%; /* Ensure it doesn't shrink */
+  gap: 4px; /* Optional: adds small gap between input and button */
+}
+
+/* Certification name input */
+.cert-name-input {
+  width: 100%; /* Full width of available space inside the wrapper */
+  padding-right: 2rem; /* Provide space if dropdown button overlaps */
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.cert-dropdown-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 0 6px;
+}
+
+/* Certification dropdown container (td container) fix */
+.cert-dropdown-container {
+  width: 100%;
+  position: relative;
+}
+
+/* Prevent table row cells from shifting */
+tbody td {
+  vertical-align: top;
+  padding: 8px;
+}
+
+/* Keep the inner-content select cell aligned */
+.inner-content {
+  display: flex;
+  align-items: center;
+}
+.cert-dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cert-dropdown-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.cert-dropdown-option:hover {
+  background-color: #f5f5f5;
+}
+
+.cert-dropdown-option.no-results {
+  color: #666;
+  font-style: italic;
+}
   
   /* Mobile-friendly skill tags */
   .inline-skill-tag {

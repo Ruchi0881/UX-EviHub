@@ -2,13 +2,19 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { SkillProvider } from './context/skillContext';
+import { CertificationProvider } from './context/certificationContext';
 
 
 const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <SkillProvider>
+        <CertificationProvider>
+          <App/>
+        </CertificationProvider>
+      </SkillProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

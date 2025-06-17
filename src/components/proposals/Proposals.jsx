@@ -149,10 +149,10 @@ const Proposals = () => {
                   {userProposals.map(proposal => (
                     <div key={proposal.id} className="proposal-item">
                       <div className="proposal-details">
-                        <h4>{proposal.name}</h4>
-                        <p><strong>Description:</strong> {proposal.description}</p>
+                        <h4>{proposal.proposalName}</h4>
+                        <p><strong>Description:</strong> {proposal.proposalDescription}</p>
                         <p><strong>Theme:</strong> {proposal.theme}</p>
-                        <p><strong>Status:</strong> <span className={`status ${proposal.status.toLowerCase()}`}>{proposal.status}</span></p>
+                        <p><strong>Status:</strong> <span >{proposal.status}</span></p>
                         <p><strong>Submitted:</strong> {proposal.dateOfSubmission}</p>
                         {proposal.updatedAt && (
                           <p><strong>Last Updated:</strong> {proposal.updatedAt}</p>
