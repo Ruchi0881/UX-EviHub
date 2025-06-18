@@ -53,7 +53,7 @@ namespace Evihub.Services
         }
         public async Task<IEnumerable<CertificationprogressDTO>> GetByCertificationId(int id)
         {
-            var pro =  await _repo.GetByCertificationIdAsync(id);
+            var pro = await _repo.GetByCertificationIdAsync(id);
             return _mapper.Map<IEnumerable<CertificationprogressDTO>>(pro);
         }
     }

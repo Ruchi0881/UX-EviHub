@@ -1,10 +1,9 @@
-﻿using EviHub.EviHub.Core.Entities.MasterData;
-using Evihub.Data.Configurations;
-
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
+﻿using Evihub.Data.Configurations;
 using EviHub.Data.Configurations;
+using EviHub.EviHub.Core.Entities.MasterData;
 using EviHub.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Evihub.Data
 {
@@ -16,20 +15,19 @@ namespace Evihub.Data
         }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
-        //    //Fluent Api Configurations
-        //    modelBuilder.ApplyConfiguration(new EmployeeConfig());
-        //    modelBuilder.ApplyConfiguration(new ManagersConfig());
-        //    modelBuilder.ApplyConfiguration(new GendersConfig());
-        //    modelBuilder.ApplyConfiguration(new ProjectsConfig());
-        //    modelBuilder.ApplyConfiguration(new DesignationConfig());
-        //    modelBuilder.ApplyConfiguration(new SkillsConfig());
-        //    modelBuilder.ApplyConfiguration(new CertificationConfig());
-        //    modelBuilder.ApplyConfiguration(new EmployeeProjectConfig());
+        // //Fluent Api Configurations
+        // modelBuilder.ApplyConfiguration(new EmployeeConfig());
+        // modelBuilder.ApplyConfiguration(new ManagersConfig());
+        // modelBuilder.ApplyConfiguration(new GendersConfig());
+        // modelBuilder.ApplyConfiguration(new ProjectsConfig());
+        // modelBuilder.ApplyConfiguration(new DesignationConfig());
+        // modelBuilder.ApplyConfiguration(new SkillsConfig());
+        // modelBuilder.ApplyConfiguration(new CertificationConfig());
+        // modelBuilder.ApplyConfiguration(new EmployeeProjectConfig());
 
 
         //}
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Login> Logins { get; set; }
         public DbSet<Proposal> Proposals { get; set; }
         public DbSet<ProposalWork> ProposalWorks { get; set; }
         public DbSet<Certification> Certifications { get; set; }
@@ -52,7 +50,8 @@ namespace Evihub.Data
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Skills> Skills { get; set; }
-        public DbSet<EmployeeSkills>   EmployeeSkills { get; set; }
+        public DbSet<EmployeeSkills> EmployeeSkills { get; set; }
+        public DbSet<Login> Logins { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -71,62 +70,92 @@ namespace Evihub.Data
 
 
             modelBuilder.Entity<ProposalWork>()
-                .HasOne(pw => pw.Proposal)
-                .WithMany(p => p.ProposalWorks)
-                .HasForeignKey(pw => pw.ProposalId)
-                .OnDelete(DeleteBehavior.Restrict);
+            .HasOne(pw => pw.Proposal)
+            .WithMany(p => p.ProposalWorks)
+            .HasForeignKey(pw => pw.ProposalId)
+            .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ProposalWork>()
-                .HasOne(pw => pw.Employee)
-                .WithMany(e => e.ProposalWorks)
+            .HasOne(pw => pw.Employee)
+            .WithMany(e => e.ProposalWorks)
 
-                .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
-        
 
-            //modelBuilder.Entity<Employee>().HasData(
-            //    new Employee
-            //    {
-                  
-            //        EmpId = 1001,
-            //        FirstName = "Alice",
-            //        LastName = "Johnson",
-            //        Email = "alice.johnson@evihub.com",
-            //        Mobile = "9876543210",
-            //        DOB = new DateTime(1995, 4, 10),
-            //        Interests = "AI, Reading",
-            //        DesignationId = 1,
-            //        ManagerId = null,
-            //        ProjectId = 1,
-            //        GenderId = 1,
-            //        EmergencyContact = "9876543210",
-            //        IsAdmin = true
-            //    },
-            //    new Employee
-            //    {
+            modelBuilder.Entity<Employee>().HasData(
+            new Employee
+            {
+                Id = 1,
+                EmpId = 1001,
+                FirstName = "Sai",
+                LastName = "Teja",
+                Email = "sai.teja@evihub.com",
+                Mobile = "9876543210",
+                DOB = new DateTime(2000, 1, 1),
+                Interests = "AI, Cricket",
+                DesignationId = 1, // Make sure this exists in Designation table
+                ManagerId = 1, // Top-level employee
+                ProjectId = 1, // Must exist in Project table
+                GenderId = 1, // Example: 1 = Male
+                EmergencyContact = "9876543211",
+                IsAdmin = true,
                 
-            //        EmpId = 1002,
-            //        FirstName = "Bob",
-            //        LastName = "Smith",
-            //        Email = "bob.smith@evihub.com",
-            //        Mobile = "8765432109",
-            //        DOB = new DateTime(1992, 8, 22),
-            //        Interests = "ML, Cricket",
-            //        DesignationId = 2,
-            //        ManagerId = 1,
-            //        ProjectId = 2,
-            //        GenderId = 1,
-            //        EmergencyContact = "8765432109",
-            //        IsAdmin = false
+            },
+            new Employee
+            {
+                Id = 2,
+                EmpId = 1002,
+                FirstName = "Anjali",
+                LastName = "Sharma",
+                Email = "anjali.sharma@evihub.com",
+                Mobile = "9123456789",
+                DOB = new DateTime(1999, 5, 15),
+                Interests = "Machine Learning, Reading",
+                DesignationId = 1,
+                ManagerId = 1, // Reports to Sai
+                ProjectId = 1,
+                GenderId = 1, // Example: 2 = Female
+                EmergencyContact = "9123456790",
+                IsAdmin = false,
+               
+            }
+            );
+            modelBuilder.Entity<Designation>().HasData(
+            new Designation
+            {
+                DesignationId = 1,
+                DesignationName = "Intern",
+            }
+            );
+            modelBuilder.Entity<Manager>().HasData(
+            new Manager
+            {
+                ManagerId = 1,
+                EmpId = 1001,
+                FirstName = "Sai",
+                LastName = "Teja",
+                Email = "vvsteja23311@gmail.com",
+                Mobile = "89387632",
+            }
+            );
+            modelBuilder.Entity<Project>().HasData(
+            new Project
+            {
+                ProjectId = 1,
+                ProjectName = "One",
+                ProjectDescription = "khdcjkdf",
+                IsActive = true,
 
-            //    }
-                
-                
 
-            
+            }
+            );
+            modelBuilder.Entity<Gender>().HasData(
+            new Gender
+            {
+                GenderId = 1,
+                GenderName = "Male",
+            });
         }
-        
-
-        }
+    }
 }

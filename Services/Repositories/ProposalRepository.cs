@@ -2,6 +2,7 @@
 using Evihub.Data;
 
 using Microsoft.EntityFrameworkCore;
+using EviHub.DTOs;
 
 namespace Evihub.Repositories
 {
@@ -12,7 +13,7 @@ namespace Evihub.Repositories
 
         public async Task<IEnumerable<Proposal>> GetAllProposalsAsync()
         {
-            return await _context.Proposals.ToListAsync();
+            return await _context.Proposals.OrderByDescending(p=>p.ProposalDate).ToListAsync();
         }
         public async Task<Proposal> GetProposalByIdAsync(int id)
         {
@@ -43,7 +44,29 @@ namespace Evihub.Repositories
         {
             return await _context.Proposals.Where(p=>p.EmpId == Empid).ToListAsync();
         }
+        public async Task<List<ProposalteamsDTO>> GetTeamswithProposalId()
+        {
+            var data = await (from p in _context.Proposals
+                              join e in _context.Employees on p.EmpId equals e.EmpId
+                              select new ProposalteamsDTO
+                              {
+                                  ProposalId = p.ProposalId,
+                                  ProposalName = p.ProposalName,
+                                  ProposalDescription = p.ProposalDescription,
+                                  ProposalDate = p.ProposalDate,
+                                  Theme = p.Theme,
+                                  Status = p.Status,
+                                  Submitter = e.FirstName + " " + e.LastName,
+                                  Teams = _context.ProposalWorks
+                              .Where(pw => pw.ProposalId == p.ProposalId)
+                              .Select(pw => pw.Employee.FirstName + " " + pw.Employee.LastName)
+                              .ToList()
+                              }).ToListAsync();
+            return data;
+        }
 
-        
+
+
+
     }
 }

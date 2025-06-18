@@ -1,4 +1,5 @@
-﻿using EviHub.Models.Entities;
+﻿using EviHub.DTOs;
+using EviHub.Models.Entities;
 
 
 namespace Evihub.Repositories
@@ -11,6 +12,7 @@ namespace Evihub.Repositories
         Task<Proposal> UpdateProposalAsync(Proposal proposal);
         Task<bool> DeleteProposalAsync(int id);
         Task<IEnumerable<Proposal>> getAllProposalsByEmpId(int Empid);
+        Task<List<ProposalteamsDTO>> GetTeamswithProposalId();
 
     }
 }

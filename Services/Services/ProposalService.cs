@@ -51,6 +51,10 @@ namespace Evihub.Services
             var proposals = await _Repository.getAllProposalsByEmpId(Empid);
             return _mapper.Map<IEnumerable<ProposalDTO>>(proposals);
         }
+        public async Task<List<ProposalteamsDTO>> GetProposalteams()
+        {
+            return await _Repository.GetTeamswithProposalId();
+        }
 
 
     }

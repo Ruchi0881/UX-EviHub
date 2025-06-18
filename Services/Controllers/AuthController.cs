@@ -1,6 +1,8 @@
-﻿using EviHub.DTOs;
+﻿using Evihub.Data;
+using EviHub.DTOs;
 using EviHub.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EviHub.Controllers
 {
@@ -11,10 +13,12 @@ namespace EviHub.Controllers
     public class AuthController : ControllerBase
     {
         private readonly ILoginService _loginService;
+        private readonly EviHubDbContext _context;
 
-        public AuthController(ILoginService loginService)
+        public AuthController(ILoginService loginService,EviHubDbContext context)
         {
             _loginService = loginService;
+            _context = context;
         }
 
         [HttpPost("signup")]
@@ -35,13 +39,16 @@ namespace EviHub.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO dto)
         {
+            
+            var y = _context.Employees.FirstOrDefault(x => x.Email == dto.Email);
+            
             //try
             //{
                 var result = await _loginService.AuthenticateAsync(dto);
             if (result == false)
                 return Unauthorized("Invalid Username or Password");
             else
-                return Ok("Login Successful");// Or ValidateUserAsync()
+                return Ok(y.EmpId);// Or ValidateUserAsync()
                 //return Ok(result);  // 200 OK with LoginResponseDTO
             //}
             //catch (Exception ex)

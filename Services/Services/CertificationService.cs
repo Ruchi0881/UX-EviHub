@@ -31,7 +31,7 @@ namespace Evihub.Services
                 throw new Exception("Certification not found");
             }
             existing.CertificationName = certification.CertificationName;
-            existing.CategoryId = certification.CategoryId;
+            //existing.CategoryId = certification.CategoryId;
             existing.IsActive = certification.IsActive;
             await _repo.UpdateCertificationAsync(existing);
         }

@@ -2,6 +2,7 @@
 using Evihub.Data;
 
 using Microsoft.EntityFrameworkCore;
+using EviHub.DTOs;
 
 namespace Evihub.Repositories
 {
@@ -41,10 +42,30 @@ namespace Evihub.Repositories
             
         } 
         
-        public async Task<IEnumerable<Certificationprogress>> GetByEmployeeIdAsync(int id)
+        public async Task<IEnumerable<CertificationprogressDTO>> GetByEmployeeIdAsync(int id)
         {
-            return await _context.Certificationprogress.Where (cp=>cp.EmpId==id).ToListAsync();
+
+
+            var result = await (from cp in _context.Certificationprogress
+                                join c in _context.Certifications
+                                on cp.CertificationId equals c.CertificationId
+
+                                select new CertificationprogressDTO
+                                {
+                                    CertificationProgressId = cp.CertificationProgressId,
+                                    CertificationId = cp.CertificationId,
+                                    CertificationName = c.CertificationName,
+                                    EmpId = cp.EmpId,
+                                    CompletionDate = cp.CompletionDate,
+                                    Status = cp.Status,
+                                    Comments = cp.Comments
+                                }).ToListAsync();
+
+            return result;
         }
+
+        
+        
         public async Task<List<Certificationprogress>> GetByCertificationIdAsync(int id)
         {
            var ex = await _context.Certificationprogress.Where(cp=> cp.CertificationId==id).ToListAsync();

@@ -94,7 +94,7 @@ namespace EviHub.Controllers
         }
         //DELETE :api/skills/bulk delete
         [HttpDelete("employee-skills/{empId}")]
-        public async Task<IActionResult> DeleteEmployeeSkills(int empId, [FromBody] List<int> skillId)
+        public async Task<IActionResult> DeleteMultipleSkillEmployeeAsync(int empId, [FromBody] List<int> skillId)
         {
             await _service.DeleteMultipleSkillForEmployeeAsync(new AddEmployeeSkillsDTO
             {

@@ -1,4 +1,5 @@
-﻿using EviHub.Models.Entities;
+﻿using EviHub.DTOs;
+using EviHub.Models.Entities;
 
 
 namespace Evihub.Repositories
@@ -10,7 +11,7 @@ namespace Evihub.Repositories
         Task<Certificationprogress> AddAsync(Certificationprogress progress);
         Task UpdateAsync(Certificationprogress progress);
         Task<bool> DeleteAsync(int id);
-        Task<IEnumerable<Certificationprogress>> GetByEmployeeIdAsync(int id);
+        Task<IEnumerable<CertificationprogressDTO>> GetByEmployeeIdAsync(int id);
         Task<List<Certificationprogress>> GetByCertificationIdAsync(int id);
     }
 }

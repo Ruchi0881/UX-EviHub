@@ -13,5 +13,6 @@ namespace Evihub.Services
         Task<ProposalDTO> UpdateProposalAsync(int id,ProposalDTO dto);
         Task<bool> DeleteProposalAsync(int id);
         Task<IEnumerable<ProposalDTO>> getAllProposalsByEmpId(int Empid);
+        Task<List<ProposalteamsDTO>> GetProposalteams();
     }
 }
