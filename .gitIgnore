@@ -1,0 +1,9 @@
+#Ignore system and IDE files
+.github
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.vsidx
+*.log
