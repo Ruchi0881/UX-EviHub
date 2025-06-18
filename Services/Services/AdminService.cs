@@ -148,6 +148,25 @@ namespace EviHub.Services
             return await _skillService.UpdateEmployeeSkillsAsync(dto);
         }
 
+        public async Task<List<EmployeeSkillsDTO>> AddEmployeeSkillsAsync(AddEmployeeSkillsDTO dto)
+        {
+            return await _skillService.AddEmployeeSkillsAsync(dto);
+        }
+
+        public async Task DeleteSkillForEmployeeAsync(int empId, int skillId)
+        {
+            await _skillService.DeleteSkillForEmployeeAsync(empId, skillId);
+        }
+        public async Task DeleteMultipleSkillForEmployeeAsync(AddEmployeeSkillsDTO dto)
+        {
+            if (dto.SkillId == null || !dto.SkillId.Any())
+                throw new ArgumentException("SkillIds list cannot be empty.");
+
+            await _skillService.DeleteMultipleSkillForEmployeeAsync(dto);
+        }
+
+
+
         //// === Certification operations ===
         //public async Task<IEnumerable<CertificationDTO>> GetAllCertificationsAsync()
         //{

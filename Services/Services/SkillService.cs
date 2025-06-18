@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using EviHub.DTOs;
 using EviHub.EviHub.Core.Entities.MasterData;
+using EviHub.Models.Entities;
 using EviHub.Repositories;
 using EviHub.Repositories.Interfaces;
 using EviHub.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace EviHub.Services
 {
@@ -76,6 +78,8 @@ namespace EviHub.Services
             return skill == null ? null : _mapper.Map<SkillDTO?>(skill);
         }
 
+        
+
         public async Task<bool> DeleteSkillAsync(int id)
         {
             var existing = await _skillRepository.GetSkillByIdAsync(id);
@@ -87,6 +91,42 @@ namespace EviHub.Services
             {
                 await _skillRepository.DeleteSkillAsync(id);
                 return true;
+            }
+        }
+
+        public async Task<List<EmployeeSkillsDTO>> AddEmployeeSkillsAsync(AddEmployeeSkillsDTO dto)
+        {
+            // Manual mapping: One EmpId, multiple SkillIds
+            var newSkills = dto.SkillId.Select(skillId => new EmployeeSkills
+            {
+                EmpId = dto.EmpId,
+                SkillId = skillId
+            }).ToList();
+
+            await _skillRepository.AddEmployeeSkillsAsync(newSkills);
+            //await _skillRepository.SaveChangesAsync();
+
+            // Optional: map result to DTO
+            var result = newSkills.Select(es => new EmployeeSkillsDTO
+            {
+                EmpId = es.EmpId,
+                SkillId = es.SkillId
+            }).ToList();
+
+            return result;
+        }
+
+
+        public async Task DeleteSkillForEmployeeAsync(int empId, int skillId)
+        {
+            await _skillRepository.DeleteSkillForEmployeeAsync(empId, skillId);
+        }
+
+        public async Task DeleteMultipleSkillForEmployeeAsync(AddEmployeeSkillsDTO dto)
+        {
+            foreach (var skillId in dto.SkillId)
+            {
+                await _skillRepository.DeleteMultipleSkillForEmployeeAsync (dto.EmpId, dto.SkillId);
             }
         }
     }
