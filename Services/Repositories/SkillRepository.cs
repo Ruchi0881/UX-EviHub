@@ -50,7 +50,7 @@ namespace EviHub.Repositories
                 {
                     EmpId = empId,
                     SkillId = skillId
-                });
+                }).ToList();
 
                 await _context.EmployeeSkills.AddRangeAsync(newSkills);
                 await _context.SaveChangesAsync();
@@ -82,7 +82,35 @@ namespace EviHub.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
-        
+
+        public async Task AddEmployeeSkillsAsync(List<EmployeeSkills> skills)
+        {
+            await _context.EmployeeSkills.AddRangeAsync(skills);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteSkillForEmployeeAsync(int empId, int skillId)
+        {
+            var skillToRemove = await _context.EmployeeSkills
+                .FirstOrDefaultAsync(es => es.EmpId == empId && es.SkillId == skillId);
+
+            if (skillToRemove != null)
+            {
+                _context.EmployeeSkills.Remove(skillToRemove);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteMultipleSkillForEmployeeAsync(int empId, List<int> skillId)
+        {
+            var skillsToRemove = await _context.EmployeeSkills
+                .Where(es => es.EmpId == empId && skillId.Contains(es.SkillId))
+                .ToListAsync();
+
+            _context.EmployeeSkills.RemoveRange(skillsToRemove);
+            await _context.SaveChangesAsync();
+        }
+
     }
     
 }

@@ -35,6 +35,9 @@ namespace EviHub.Services.Interfaces
         Task<UpdateEmployeeSkillsDTO> UpdateEmployeeSkillsAsync(UpdateEmployeeSkillsDTO dto);
         Task<SkillDTO?> GetSkillByIdAsync(int id);
         Task<bool> DeleteSkillAsync(int id);
+        Task<List<EmployeeSkillsDTO>> AddEmployeeSkillsAsync(AddEmployeeSkillsDTO dto);
+        Task DeleteSkillForEmployeeAsync(int empId, int skillId);
+        Task DeleteMultipleSkillForEmployeeAsync(AddEmployeeSkillsDTO dto);
 
         // Certification operations
         //Task<IEnumerable<CertificationDTO>> GetAllCertificationsAsync();
