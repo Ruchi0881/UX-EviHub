@@ -8,10 +8,10 @@ namespace EviHub.Services
 {
     public class ProposalWorkService : IProposalWorkService
     {
-        private readonly IProposalWorkService _repo;
+        private readonly IProposalWorkRepository _repo;
         private readonly IMapper _mapper;
         private readonly EviHubDbContext _context;
-        public ProposalWorkService(IProposalWorkService repo, IMapper mapper, EviHubDbContext context)
+        public ProposalWorkService(IProposalWorkRepository repo, IMapper mapper, EviHubDbContext context)
         {
             _repo = repo;
             _mapper = mapper;
@@ -35,7 +35,7 @@ namespace EviHub.Services
         public async Task<ProposalWorkDTO> AddAsync(ProposalWorkDTO dto)
         {
 
-            var entity = _mapper.Map<ProposalWorkDTO>(dto);
+            var entity = _mapper.Map<ProposalWork>(dto);
             await _repo.AddAsync(entity);
             return _mapper.Map<ProposalWorkDTO>(entity);
 
@@ -44,7 +44,7 @@ namespace EviHub.Services
         {
             var entity = await _context.ProposalWorks.FindAsync(dto.ProposalId);
             if (entity == null) throw new Exception("Not Found");
-            var enti = _mapper.Map<ProposalWorkDTO>(dto);
+            var enti = _mapper.Map<ProposalWork>(dto);
             await _repo.UpdateAsync(enti);
             return _mapper.Map<ProposalWorkDTO>(enti);   
 

@@ -56,6 +56,9 @@ builder.Services.AddScoped<IManagerRepository, ManagerRepository>();
 builder.Services.AddScoped<IManagerService, ManagerService>();
 builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IProposalWorkService, ProposalWorkService>();
+builder.Services.AddScoped<IProposalWorkRepository, ProposalWorkRepository>();
+
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

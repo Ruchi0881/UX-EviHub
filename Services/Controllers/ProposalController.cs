@@ -57,6 +57,12 @@ namespace Evihub.Controllers
             var res = await _service.getAllProposalsByEmpId(id);
             return Ok(res);
         }
+        [HttpGet("Allproposals")]
+        public async Task<ActionResult<List<ProposalteamsDTO>>> GetProposalswithteams()
+        {
+            var result = await _service.GetProposalteams();
+            return Ok(result);
+        }
 
     }
 }
