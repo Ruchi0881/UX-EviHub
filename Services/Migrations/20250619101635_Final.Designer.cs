@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EviHub.Migrations
 {
     [DbContext(typeof(EviHubDbContext))]
-    [Migration("20250617064026_Final")]
+    [Migration("20250619101635_Final")]
     partial class Final
     {
         /// <inheritdoc />
@@ -44,6 +44,13 @@ namespace EviHub.Migrations
                         .IsUnique();
 
                     b.ToTable("Designations");
+
+                    b.HasData(
+                        new
+                        {
+                            DesignationId = 1,
+                            DesignationName = "Intern"
+                        });
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.MasterData.Gender", b =>
@@ -62,6 +69,13 @@ namespace EviHub.Migrations
                     b.HasKey("GenderId");
 
                     b.ToTable("Genders");
+
+                    b.HasData(
+                        new
+                        {
+                            GenderId = 1,
+                            GenderName = "Male"
+                        });
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.MasterData.Manager", b =>
@@ -94,6 +108,17 @@ namespace EviHub.Migrations
                     b.HasKey("ManagerId");
 
                     b.ToTable("Managers");
+
+                    b.HasData(
+                        new
+                        {
+                            ManagerId = 1,
+                            Email = "vvsteja23311@gmail.com",
+                            EmpId = 1001,
+                            FirstName = "Sai",
+                            LastName = "Teja",
+                            Mobile = "89387632"
+                        });
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.MasterData.Project", b =>
@@ -123,6 +148,15 @@ namespace EviHub.Migrations
                         .IsUnique();
 
                     b.ToTable("Projects");
+
+                    b.HasData(
+                        new
+                        {
+                            ProjectId = 1,
+                            IsActive = true,
+                            ProjectDescription = "khdcjkdf",
+                            ProjectName = "One"
+                        });
                 });
 
             modelBuilder.Entity("EviHub.EviHub.Core.Entities.MasterData.Skills", b =>
@@ -153,9 +187,6 @@ namespace EviHub.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CertificationId"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
 
                     b.Property<int?>("CertificationCategoryCategoryId")
                         .HasColumnType("int");
@@ -207,15 +238,15 @@ namespace EviHub.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("CompletionDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("EmpId")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("completionDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("CertificationProgressId");
 
@@ -295,6 +326,42 @@ namespace EviHub.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            EmpId = 1001,
+                            DOB = new DateTime(2000, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DesignationId = 1,
+                            Email = "sai.teja@evihub.com",
+                            EmergencyContact = "9876543211",
+                            FirstName = "Sai",
+                            GenderId = 1,
+                            Id = 1,
+                            Interests = "AI, Cricket",
+                            IsAdmin = true,
+                            LastName = "Teja",
+                            ManagerId = 1,
+                            Mobile = "9876543210",
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            EmpId = 1002,
+                            DOB = new DateTime(1999, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DesignationId = 1,
+                            Email = "anjali.sharma@evihub.com",
+                            EmergencyContact = "9123456790",
+                            FirstName = "Anjali",
+                            GenderId = 1,
+                            Id = 2,
+                            Interests = "Machine Learning, Reading",
+                            IsAdmin = false,
+                            LastName = "Sharma",
+                            ManagerId = 1,
+                            Mobile = "9123456789",
+                            ProjectId = 1
+                        });
                 });
 
             modelBuilder.Entity("EviHub.Models.Entities.EmployeeProject", b =>
@@ -359,8 +426,7 @@ namespace EviHub.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Email");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EmpId")
                         .HasColumnType("int");
@@ -421,7 +487,7 @@ namespace EviHub.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProposalWorkId"));
 
-                    b.Property<int>("EmployeeId")
+                    b.Property<int>("EmpId")
                         .HasColumnType("int");
 
                     b.Property<bool?>("IsActive")
@@ -432,7 +498,7 @@ namespace EviHub.Migrations
 
                     b.HasKey("ProposalWorkId");
 
-                    b.HasIndex("EmployeeId");
+                    b.HasIndex("EmpId");
 
                     b.HasIndex("ProposalId");
 
@@ -558,7 +624,7 @@ namespace EviHub.Migrations
                 {
                     b.HasOne("EviHub.Models.Entities.Employee", "Employee")
                         .WithMany("ProposalWorks")
-                        .HasForeignKey("EmployeeId")
+                        .HasForeignKey("EmpId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
