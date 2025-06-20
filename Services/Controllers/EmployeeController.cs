@@ -1,4 +1,5 @@
 ﻿
+using Evihub.Repositories;
 using Evihub.Services;
 using EviHub.DTOs;
 using EviHub.Services;
@@ -13,9 +14,11 @@ namespace Evihub.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _service;
-        public EmployeeController(IEmployeeService service)
+        private readonly IEmployeeRepository _repo;
+        public EmployeeController(IEmployeeService service, IEmployeeRepository repo)
         {
             _service = service;
+            _repo = repo;
         }
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
@@ -46,6 +49,13 @@ namespace Evihub.Controllers
             var deleted = await _service.DeleteEmployeeAsync(id);
             if (!deleted) return NotFound();
             return Ok(deleted);
+        }
+        [HttpGet("OfficeInfo")]
+        public async Task<ActionResult> GetOfficeinfo(int empid)
+        {
+            var employee =  await _repo.GetOfficeInfo(empid);
+            if(employee == null) { return NotFound(); };
+            return Ok(employee);
         }
     }
 }

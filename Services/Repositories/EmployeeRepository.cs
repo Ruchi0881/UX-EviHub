@@ -1,6 +1,7 @@
 ﻿using EviHub.Models.Entities;
 using Evihub.Data;
 using Microsoft.EntityFrameworkCore;
+using EviHub.DTOs;
 
 namespace Evihub.Repositories
 {
@@ -40,5 +41,24 @@ namespace Evihub.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+        public async Task<OfficeInfoDTO> GetOfficeInfo(int empid)
+        {
+            var data= await _context.Employees
+                .Include(e => e.Manager)
+                .Include(e => e.Designation)
+                .Where(e => e.EmpId == empid)
+                .Select(e => new OfficeInfoDTO
+                {
+                    Manager = e.Manager.FirstName + " " + e.Manager.LastName,
+                    Designation = e.Designation.DesignationName
+                })
+                .FirstOrDefaultAsync();
+
+            return data;
+
+            
+        }
+
+        
     }
 }
