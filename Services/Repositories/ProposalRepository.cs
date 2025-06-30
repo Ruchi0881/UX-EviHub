@@ -13,7 +13,7 @@ namespace Evihub.Repositories
 
         public async Task<IEnumerable<Proposal>> GetAllProposalsAsync()
         {
-            return await _context.Proposals.OrderBy(p=>p.ProposalDate).ToListAsync();
+            return await _context.Proposals.OrderByDescending(p=>p.ProposalDate).ToListAsync();
         }
         public async Task<Proposal> GetProposalByIdAsync(int id)
         {
@@ -48,7 +48,6 @@ namespace Evihub.Repositories
         {
             var data = await (from p in _context.Proposals
                               join e in _context.Employees on p.EmpId equals e.EmpId
-                              orderby p.ProposalDate descending
                               select new ProposalteamsDTO
                               {
                                   ProposalId = p.ProposalId,

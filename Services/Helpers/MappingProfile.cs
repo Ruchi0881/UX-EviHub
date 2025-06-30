@@ -42,7 +42,16 @@ namespace Evihub.Helpers
             .ForMember(dest => dest.Role, opt => opt.MapFrom(src =>
                 src.Employee.IsAdmin == true ? "Admin" :
                 src.Employee.ManagerId != null ? "Manager" : "Employee"));
-            CreateMap<SignupRequestDTO, Employee>();
+            
+            CreateMap<SignupRequestDTO, Employee>()
+    //.ForMember(dest => dest.CertificationId, opt => opt.Ignore())
+    .ForMember(dest => dest.DOJ, opt => opt.Ignore())
+    //.ForMember(dest => dest.DesignationId, opt => opt.Ignore()) // if not in signup
+    .ForMember(dest => dest.ProjectId, opt => opt.Ignore())     // same here
+    //.ForMember(dest => dest.SkillId, opt => opt.Ignore())       // etc.
+    .ForMember(dest => dest.IsAdmin, opt => opt.Ignore());      // optional if not passed
+
+
 
 
 

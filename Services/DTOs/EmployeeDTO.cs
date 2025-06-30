@@ -22,6 +22,7 @@ namespace EviHub.DTOs
         public string Email { get; set; }
         public string Mobile { get; set; }
         public DateTime DOB { get; set; }
+        public DateTime DOJ { get; set; }
         public string Interests { get; set; }
         public int DesignationId { get; set; }
         public int? ManagerId { get; set; }

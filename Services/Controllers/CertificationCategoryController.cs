@@ -1,10 +1,12 @@
 ﻿using EviHub.DTOs;
 using Evihub.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Evihub.Controllers
     
 {
+    //[Authorize(Roles = "Manager,Admin")]
     [ApiController]
     [Route("api/[Controller]")]
     public class CertificationCategoryController :ControllerBase

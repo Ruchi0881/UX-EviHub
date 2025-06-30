@@ -2,9 +2,11 @@
 
 using Evihub.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Evihub.Controllers
 {
+    //[Authorize(Roles = "Employee")]
     [ApiController]
     [Route("api/[controller]")]
     public class CertificationprogressController : ControllerBase

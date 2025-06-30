@@ -2,12 +2,11 @@
 using EviHub.DTOs;
 using EviHub.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EviHub.Controllers
 {
-     [ApiController]
-     [Route("api/[controller]")]
+    [ApiController]
+    [Route("api/[controller]")]
 
 
     public class AuthController : ControllerBase
@@ -15,7 +14,7 @@ namespace EviHub.Controllers
         private readonly ILoginService _loginService;
         private readonly EviHubDbContext _context;
 
-        public AuthController(ILoginService loginService,EviHubDbContext context)
+        public AuthController(ILoginService loginService, EviHubDbContext context)
         {
             _loginService = loginService;
             _context = context;
@@ -26,37 +25,60 @@ namespace EviHub.Controllers
         {
             //try
             //{
-                var result = await _loginService.SignupAsync(dto);
-                return Ok(result);  // 200 OK with SignupResponseDTO
+            var result = await _loginService.SignupAsync(dto);
+            return Ok(result);  // 200 OK with SignupResponseDTO
             //}
             //catch (Exception ex)
             //{
             //    return BadRequest(new { message = ex.Message });  // 400 Bad Request if email exists, etc.
             //}
         }
+        //[HttpPost("login")]
+        //public async Task<IActionResult> Login([FromBody] LoginRequestDTO dto)
+        //{
+        //    var token = await _loginService.AuthenticateAndGenerateTokenAsync(dto);
+        //    if (token == null)
+        //        return Unauthorized("Invalid Email or Password");
 
-       
+        //    return Ok(new
+        //    {
+        //        Token = token,
+        //        Message = "Login successful"
+        //    });
+        //}
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO dto)
         {
-            
-            var y = _context.Employees.FirstOrDefault(x => x.Email == dto.Email);
-            
-            //try
-            //{
-                var result = await _loginService.AuthenticateAsync(dto);
-            if (result == false)
-                return Unauthorized("Invalid Username or Password");
-            else
-                return Ok(y.EmpId);// Or ValidateUserAsync()
-                //return Ok(result);  // 200 OK with LoginResponseDTO
-            //}
-            //catch (Exception ex)
-            //{
-            //    return Unauthorized(new { message = ex.Message });  // 401 Unauthorized if password/email invalid
-            //}
-        }
-    }
+            var result = await _loginService.AuthenticateAndGenerateTokenAsync(dto);
+            if (result == null) return Unauthorized(new { message = "Invalid credentials" });
 
+            return Ok(result); // returns token + user info
+        }
+
+
+        //[HttpPost("login")]
+        //public async Task<IActionResult> Login([FromBody] LoginRequestDTO dto)
+        //
+
+        //    //var y = _context.Employees.FirstOrDefault(x => x.Email == dto.Email);
+
+        //    //try
+        //    //{
+        //        var result = await _loginService.AuthenticateAsync(dto);
+        //    if (result == false)
+        //        return Unauthorized("Invalid Username or Password");
+        //    else
+        //        return Ok(y.EmpId);// Or ValidateUserAsync()
+        //        //return Ok(result);  // 200 OK with LoginResponseDTO
+        //    //}
+        //    //catch (Exception ex)
+        //    //{
+        //    //    return Unauthorized(new { message = ex.Message });  // 401 Unauthorized if password/email invalid
+        //    //}
+
+    }
 }
+
+
 

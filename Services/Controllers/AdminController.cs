@@ -2,9 +2,11 @@
 using Evihub.Services;
 using Microsoft.AspNetCore.Mvc;
 using EviHub.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EviHub.Controllers
 {
+    //[Authorize(Roles ="Admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class AdminController : ControllerBase

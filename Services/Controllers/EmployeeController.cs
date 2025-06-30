@@ -3,12 +3,14 @@ using Evihub.Repositories;
 using Evihub.Services;
 using EviHub.DTOs;
 using EviHub.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 
 namespace Evihub.Controllers
 {
+    //[Authorize(Roles = "Employee,Manager,Admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
