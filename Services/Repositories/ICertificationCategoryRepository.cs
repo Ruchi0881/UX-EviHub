@@ -8,7 +8,7 @@ namespace Evihub.Repositories
         Task<CertificationCategory> AddAsync(CertificationCategory certification);
         Task<bool> UpdateAsync(CertificationCategory certification);
         Task<bool> DeleteAsync(int id);
-        //Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id);
+        Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id);
     }
 }
 

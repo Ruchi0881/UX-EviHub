@@ -40,12 +40,12 @@ namespace Evihub.Repositories
             return true;
 
         }
-        //public async Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id)
-        //{
-           
-            
-        //    return await _context.Certifications.Where(c=>c.CategoryId == id).ToListAsync();
-            
-        //}
+        public async Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id)
+        {
+
+
+            return await _context.Certifications.Where(c => c.CategoryId == id).ToListAsync();
+
+        }
     }
 }
