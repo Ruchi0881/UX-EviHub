@@ -1,26 +1,21 @@
 ﻿
-using Evihub.Repositories;
 using Evihub.Services;
 using EviHub.DTOs;
 using EviHub.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 
 namespace Evihub.Controllers
 {
-    //[Authorize(Roles = "Employee,Manager,Admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _service;
-        private readonly IEmployeeRepository _repo;
-        public EmployeeController(IEmployeeService service, IEmployeeRepository repo)
+        public EmployeeController(IEmployeeService service)
         {
             _service = service;
-            _repo = repo;
         }
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
@@ -51,13 +46,6 @@ namespace Evihub.Controllers
             var deleted = await _service.DeleteEmployeeAsync(id);
             if (!deleted) return NotFound();
             return Ok(deleted);
-        }
-        [HttpGet("OfficeInfo")]
-        public async Task<ActionResult> GetOfficeinfo(int empid)
-        {
-            var employee =  await _repo.GetOfficeInfo(empid);
-            if(employee == null) { return NotFound(); };
-            return Ok(employee);
         }
     }
 }

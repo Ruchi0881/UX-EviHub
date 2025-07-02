@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Primitives;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace EviHub.DTOs
 {
@@ -22,7 +21,6 @@ namespace EviHub.DTOs
         public string Email { get; set; }
         public string Mobile { get; set; }
         public DateTime DOB { get; set; }
-        public DateTime DOJ { get; set; }
         public string Interests { get; set; }
         public int DesignationId { get; set; }
         public int? ManagerId { get; set; }
@@ -36,11 +34,4 @@ namespace EviHub.DTOs
         //    public int EmployeeId { get; set; }
         //}
     }
-    public class OfficeInfoDTO()
-    {
-        public String Manager { get; set; }
-        public String Designation { get; set; }
-        public List<String> Interests { get; set ; }
-    }
-
 }

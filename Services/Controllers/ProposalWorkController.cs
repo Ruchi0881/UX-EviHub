@@ -1,11 +1,9 @@
 ﻿using EviHub.DTOs;
 using EviHub.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EviHub.Controllers
 {
-    //[Authorize(Roles = "Manager")]
     [ApiController]
     [Route("api/[controller]")]
     public class ProposalWorkController : ControllerBase

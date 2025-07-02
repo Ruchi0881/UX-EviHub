@@ -3,11 +3,9 @@ using EviHub.DTOs;
 using EviHub.Models.Entities;
 using Evihub.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Evihub.Controllers
 {
-    //[Authorize(Roles ="Employee")]
     [ApiController]
     [Route("api/[controller]")]
     public class CertificationController : ControllerBase

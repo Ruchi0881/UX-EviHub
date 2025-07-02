@@ -10,6 +10,6 @@ namespace Evihub.Services
         Task<CertificationCategoryDTO> AddAsync(CreateCertificationCategoryDTO dto);
         Task<bool> UpdateAsync(int id , UpdateCertificationCategoryDTO dto);
         Task<bool> DeleteAsync(int id);
-        Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id);
+        //Task<IEnumerable<Certification>> GetCertificationsByCategoryId(int id);
     }
 }

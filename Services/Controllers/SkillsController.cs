@@ -1,12 +1,10 @@
 ﻿using EviHub.DTOs;
 using EviHub.Services;
 using EviHub.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EviHub.Controllers
 {
-    //[Authorize(Roles = "Employee")]
     [ApiController]
     [Route("[controller]")]
     public class SkillsController : ControllerBase

@@ -1,15 +1,11 @@
 ﻿using EviHub.DTOs;
-using EviHub.EviHub.Core.Entities.MasterData;
+
 using EviHub.Services;
 using EviHub.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EviHub.Controllers
 {
-    
-    
-    //[Authorize(Roles = "Admin,Manager")]
     [ApiController]
     [Route("api/[controller]")]
     public class ProjectsController : ControllerBase

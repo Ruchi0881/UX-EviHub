@@ -484,7 +484,7 @@ namespace EviHub.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProposalWorkId"));
 
-                    b.Property<int>("EmpId")
+                    b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
                     b.Property<bool?>("IsActive")
@@ -495,7 +495,7 @@ namespace EviHub.Migrations
 
                     b.HasKey("ProposalWorkId");
 
-                    b.HasIndex("EmpId");
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("ProposalId");
 
@@ -621,7 +621,7 @@ namespace EviHub.Migrations
                 {
                     b.HasOne("EviHub.Models.Entities.Employee", "Employee")
                         .WithMany("ProposalWorks")
-                        .HasForeignKey("EmpId")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

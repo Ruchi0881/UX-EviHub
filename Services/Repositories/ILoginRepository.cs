@@ -5,7 +5,7 @@ namespace EviHub.Repositories
     public interface ILoginRepository
     {
         Task<Login>SignupAsync(Login login);
-        Task<Login> AuthenticateAsync (string Email);
+        Task<Login?> AuthenticateAsync (string Email);
     }
 
 }

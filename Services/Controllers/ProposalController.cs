@@ -1,12 +1,10 @@
 ﻿
 using Evihub.Services;
 using EviHub.DTOs;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Evihub.Controllers
 {
-    //[Authorize(Roles = "Employee,Manager")]
     [ApiController]
     [Route("api/[controller]")]
     public class ProposalController : ControllerBase
@@ -58,12 +56,6 @@ namespace Evihub.Controllers
         {
             var res = await _service.getAllProposalsByEmpId(id);
             return Ok(res);
-        }
-        [HttpGet("Allproposals")]
-        public async Task<ActionResult<List<ProposalteamsDTO>>> GetProposalswithteams()
-        {
-            var result = await _service.GetProposalteams();
-            return Ok(result);
         }
 
     }

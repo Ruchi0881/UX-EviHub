@@ -5,38 +5,69 @@ using EviHub.Repositories;
 using BCrypt.Net;
 using EviHub.Models.Entities;
 using Microsoft.EntityFrameworkCore;
+using EviHub.Services.Auth;
+using Evihub.Repositories;
 
 namespace EviHub.Services
 {
     public class LoginService :ILoginService
     {
         private readonly ILoginRepository _loginRepository;
+        private readonly IEmployeeRepository _employeeRepository;
         private readonly EviHubDbContext _context;
         private readonly IMapper _mapper;
-        private readonly JwtService _jwtService;
+        private readonly JwtTokenGenerator _jwtTokenGenerator;
 
-        public LoginService(ILoginRepository loginRepository,EviHubDbContext context, IMapper mapper ,JwtService jwtService)
+        public LoginService(ILoginRepository loginRepository, IEmployeeRepository employeeRepository,EviHubDbContext context, IMapper mapper, JwtTokenGenerator jwtTokenGenerator)
         {
             _loginRepository = loginRepository;
+            _employeeRepository = employeeRepository;
             _context = context;
             _mapper = mapper;
-            _jwtService = jwtService;
+            _jwtTokenGenerator = jwtTokenGenerator;
         }
-       
+        //public async Task<LoginResponseDTO> AuthenticateAsync (LoginRequestDTO loginDTO)
+        //{
+        //    using var transaction = await _context.Database.BeginTransactionAsync();
+
+        //    var loginrecord = await _loginRepository.GetByEmailAsync (loginDTO.Email);
+        //    if (loginrecord == null) return null;
+
+        //    bool isPasswordValid = BCrypt.Net.BCrypt.Verify(loginDTO.Password, loginrecord.Password);
+        //    if (!isPasswordValid) return null;
+
+        //    var responseDto = _mapper.Map<LoginResponseDTO>(loginrecord);
+        //    //responseDto.Token = "dummy-token";
+
+        //    await transaction.CommitAsync();
+        //    return responseDto;
 
 
-        public async Task <bool> AuthenticateAsync(LoginRequestDTO logindto)
+        //public async Task <bool> AuthenticateAsync(LoginRequestDTO logindto)
+        //{
+        //    var user = await _loginRepository.AuthenticateAsync(logindto.Email);
+
+        //    if (user == null)
+        //        return false;
+
+        //    var record =BCrypt.Net.BCrypt.Verify(logindto.Password, user.Password);
+        //    return record;
+        //}
+
+        public async Task<string> AuthenticateAsync(LoginRequestDTO loginDto)
         {
-            var user = await _loginRepository.AuthenticateAsync(logindto.Email);
+            var user = await _loginRepository.AuthenticateAsync(loginDto.Email);
 
-            if (user == null)
-                return false;
+            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.Password))
+                throw new UnauthorizedAccessException("Invalid credentials");
 
-            var record =BCrypt.Net.BCrypt.Verify(logindto.Password, user.Password);
-            return record;
+            var employee = await _loginRepository.SignupAsync(loginDto.Email);
+
+            var role = employee.IsAdmin ? "Admin" :
+                       employee.IsManager ? "Manager" : "Employee";
+
+            return _jwtTokenGenerator.GenerateToken(user.Email, role);
         }
-        
-
 
 
         public async Task<SignupResponseDTO> SignupAsync(SignupRequestDTO logindto)
@@ -66,41 +97,6 @@ namespace EviHub.Services
                 Email = employee.Email
             };
         }
-
-        public async Task<LoginResponseDTO> AuthenticateAndGenerateTokenAsync(LoginRequestDTO dto)
-        {
-            var login = await _loginRepository.AuthenticateAsync(dto.Email);
-            if (login == null) return null;
-
-            var isValid = BCrypt.Net.BCrypt.Verify(dto.Password, login.Password);
-            if (!isValid) return null;
-
-            var emp = await _context.Employees.FindAsync(login.EmpId);
-            if (emp == null) return null;
-
-            var token = _jwtService.GenerateToken(emp); // still generates JWT from employee
-
-            return new LoginResponseDTO
-            {
-                Token = token,
-                Message = "Login successful",
-                EmpId = emp.EmpId,
-                Email = emp.Email,
-                Role = "Employee" // or derive from emp.IsAdmin etc. later
-            };
-        }
-
-        //public async Task<string> AuthenticateAndGenerateTokenAsync(LoginRequestDTO dto)
-        //{
-        //    var login = await _loginRepository.AuthenticateAsync(dto.Email);
-        //    if (login == null) return null;
-
-        //    var isValid = BCrypt.Net.BCrypt.Verify(dto.Password, login.Password);
-        //    if (!isValid) return null;
-
-        //    var emp = await _context.Employees.FindAsync(login.EmpId);
-        //    return _jwtService.GenerateToken(emp); // generates JWT based on employee role
-        //}
 
     }
 

@@ -17,7 +17,7 @@ namespace EviHub.Repositories
             await _context.SaveChangesAsync();
             return login;
         }
-        public async Task<Login> AuthenticateAsync(string email)
+        public async Task<Login?> AuthenticateAsync(string email)
         {
             return await _context.Logins
                 //.Include(l => l.Employee)

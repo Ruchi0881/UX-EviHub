@@ -17,7 +17,6 @@ namespace EviHub.Models.Entities
         public  string Email { get; set; }
         public string? Mobile { get; set; }
         public DateTime DOB { get; set; }
-        public DateTime DOJ { get; set; }
         public string? Interests { get; set; }
         public int DesignationId { get; set; }//FK
         public int? ManagerId { get; set; }//FK

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EviHub", "EviHub\EviHub.csproj", "{B9C20692-B7B5-41DD-A12C-8921219868AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9C20692-B7B5-41DD-A12C-8921219868AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C20692-B7B5-41DD-A12C-8921219868AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C20692-B7B5-41DD-A12C-8921219868AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C20692-B7B5-41DD-A12C-8921219868AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {306A0E97-0C5F-4C35-85BF-D7943CD7A4EA}
+	EndGlobalSection
+EndGlobal

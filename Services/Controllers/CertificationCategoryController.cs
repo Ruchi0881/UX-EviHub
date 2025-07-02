@@ -1,12 +1,10 @@
 ﻿using EviHub.DTOs;
 using Evihub.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Evihub.Controllers
     
 {
-    //[Authorize(Roles = "Manager,Admin")]
     [ApiController]
     [Route("api/[Controller]")]
     public class CertificationCategoryController :ControllerBase
@@ -52,12 +50,12 @@ namespace Evihub.Controllers
             var deleted = await _service.DeleteAsync(id);
             return Ok(deleted);
         }
-        [HttpGet("{id}/certifications")]
-        public async Task<IActionResult> GetCertifications(int id)
-        {
-            var certification = await _service.GetCertificationsByCategoryId(id);
-            return Ok(certification);
-        }
+        //[HttpGet("{id}/certifications")]
+        //public async Task<IActionResult> GetCertifications(int id)
+        //{
+        //    var certification = await _service.GetCertificationsByCategoryId(id);
+        //    return Ok(certification);
+        //}
 
     }
 }

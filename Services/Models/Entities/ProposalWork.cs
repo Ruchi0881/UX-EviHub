@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EviHub.Models.Entities
 {
@@ -8,11 +7,10 @@ namespace EviHub.Models.Entities
         [Key]
         public int ProposalWorkId { get; set; }
         public int ProposalId { get; set; }//FK
-        public int EmpId { get; set; }//FK
+        public int EmployeeId { get; set; }//FK
         public bool? IsActive { get; set; }
 
         //Navigation Properties
-        [ForeignKey("EmpId")]
         public Employee Employee { get; set; }
         public Proposal Proposal { get; set; }
     }
